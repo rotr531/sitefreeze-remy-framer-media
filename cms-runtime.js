@@ -1,8 +1,13 @@
 (async()=>{
  const key=location.pathname.replace(/index\.html$/,'').replace(/\/$/,'')+'/',preview=new URLSearchParams(location.search).has('cms-preview');
  let data;try{const r=await fetch('/api/cms/'+(preview?'draft':'public'),{cache:'no-store'});if(!r.ok)throw Error();data=await r.json()}catch{return}
- const page=data.pages[key]||data.pages['/'],fields=Object.entries(page.fields),textMap=new Map(fields.filter(([,f])=>f.type==='text').map(([id,f])=>[f.original,{id,...f}]));
+ const aliases=await (await fetch('/cms-aliases.json')).json(); const page=data.pages[key]||data.pages['/'],fields=Object.entries(page.fields),textMap=new Map(fields.filter(([,f])=>f.type==='text').map(([id,f])=>[f.original,{id,...f}]));
  const origins=new WeakMap();
+ const local=aliases.pages[key];
+ const replacements={...aliases.text,...(local?.text||{})};
+ function textField(original){const desired=replacements[original]??original;return textMap.get(desired)||(Object.prototype.hasOwnProperty.call(replacements,original)?{original:desired,value:desired}:undefined)}
+ function canonical(v){if(v.includes('hello@remy.design'))return 'mailto:hello@kiin.ai';if(v.includes('cal.com'))return 'mailto:hello@kiin.ai';return v.replace(/index\.html(?=#|$)/,'').replace(/\/$/,'')}
+
  function safe(v){return /^(https?:\/\/|mailto:|tel:|\/|\.\.?\/|#)/i.test(v)}
  function apply(){
   observer.disconnect();
@@ -14,13 +19,23 @@
   for(const a of document.querySelectorAll('a'))if(['Remix for Free','Similar Templates'].includes(a.textContent.trim()))a.style.setProperty('display','none','important');
   for(const e of document.querySelectorAll('p,span,div'))if(e.children.length===0&&['Designed in','By','Thaer'].includes(e.textContent.trim())){let p=e.parentElement;while(p&&p.textContent.length<90&&!p.textContent.includes('©')&&p!==document.body){if(p.textContent.includes('Designed in')&&p.textContent.includes('Thaer')){p.style.setProperty('display','none','important');break}p=p.parentElement}}
   const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentElement?.closest('script,style,svg,[data-cms-extra]')?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});let n;
-  while(n=w.nextNode()){const original=origins.get(n)||n.nodeValue.trim(),f=textMap.get(original);if(f){origins.set(n,original);if(n.nodeValue.trim()!==f.value)n.nodeValue=f.value}}
+  while(n=w.nextNode()){const original=origins.get(n)||n.nodeValue.trim(),f=textField(original);if(f){origins.set(n,original);if(n.nodeValue.trim()!==f.value)n.nodeValue=f.value}}
   for(const e of document.querySelectorAll('[data-cms-text]')){const f=page.fields[e.dataset.cmsText];if(f&&e.textContent!==f.value)e.textContent=f.value}
   for(const e of document.querySelectorAll('img,a')){
    const type=e.tagName==='IMG'?'image':'link',attr=type==='image'?'src':'href',value=origins.get(e)||e.getAttribute(attr);if(!value)continue;origins.set(e,value);
-   const id=e.getAttribute('data-cms-'+type),f=page.fields[id]||fields.find(([,f])=>f.type===type&&(f.original===value||(type==='image'&&f.original.split('/').pop()===value.split('/').pop())))?.[1];
+   const id=e.getAttribute('data-cms-'+type);
+   let target=value;
+   if(type==='image')target=aliases.images[value.split('/').pop()]||(!e.closest('a[href*="work/"]')&&local?.image)||value;
+   else target=canonical(value);
+   let f=page.fields[id]||fields.find(([,f])=>f.type===type&&(canonical(f.original)===canonical(target)))?.[1];
+   if(!f&&target!==value)f={value:target,original:target};
+   if(type==='link'&&value.includes('framer.com/@thaer'))f={value:'https://www.linkedin.com/'};
+
    if(f&&safe(f.value)){if(e.getAttribute(attr)!==f.value)e.setAttribute(attr,f.value);if(type==='image'){e.removeAttribute('srcset');if(f.alt!==undefined)e.alt=f.alt}}
   }
+  // Fit long names inside the template's existing title band.
+  for(const h of document.querySelectorAll('h1'))if(h.closest('foreignObject')&&h.scrollWidth>h.clientWidth+2){const size=parseFloat(getComputedStyle(h).fontSize)*h.clientWidth/h.scrollWidth;h.style.setProperty('font-size',size+'px','important')}
+  for(const a of document.querySelectorAll('a[href*="/work/"]')){const slug=a.getAttribute('href').split('/work/')[1]?.split('/')[0];const year={morrow:'2026',northbeam:'2024',hana:'2025',orbit:'2026'}[slug]||'';const walker=document.createTreeWalker(a,NodeFilter.SHOW_TEXT);let t;while(t=walker.nextNode())if(/^['’]\d{2}$/.test(t.nodeValue.trim()))t.nodeValue=year?"'"+year.slice(2):''}
   // Extend each existing ticker with the four additional source projects, retaining its card markup.
   if(key==='/')for(const ul of document.querySelectorAll('ul')){
    const sample=ul.querySelector('li a[href*="work/relay"]');if(!sample||ul.querySelector('[data-cms-extra]'))continue;
@@ -32,7 +47,9 @@
   observer.observe(document.body,{subtree:true,childList:true,characterData:true,attributes:true,attributeFilter:['href','src','srcset']});
  }
  let pending=false;const observer=new MutationObserver(()=>{if(pending)return;pending=true;requestAnimationFrame(()=>{pending=false;apply()})});
- apply();
+ if(document.readyState!=='complete')await new Promise(resolve=>window.addEventListener('load',resolve,{once:true}));
+ setTimeout(apply,700);
+ window.addEventListener('resize',apply);
  // Full document navigation also supports the four added project routes.
  document.addEventListener('click',e=>{const a=e.target.closest('a');if(a&&new URL(a.href,location.href).origin===location.origin&&a.getAttribute('href')?.includes('/work/'))e.stopPropagation()},true);
  if(preview){const b=document.createElement('a');b.href='/admin/';b.textContent='BẢN NHÁP · Quay lại CMS';b.style.cssText='position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:2147483647;background:#263c2e;color:#fff;padding:12px 20px;border-radius:30px;font:13px system-ui;text-decoration:none';document.body.append(b)}
