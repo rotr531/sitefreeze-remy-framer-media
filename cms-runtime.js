@@ -27,7 +27,13 @@
    const id=e.getAttribute('data-cms-'+type);
    let target=value;
    if(type==='image')target=aliases.images[value.split('/').pop()]||(!e.closest('a[href*="work/"]')&&local?.image)||value;
-   else target=canonical(value);
+   else {
+    target=canonical(value);
+    if(value.includes('thaer.shop'))target=data.projects.find(p=>key==='/work/'+p.slug+'/')?.source||'mailto:hello@kiin.ai';
+    if(['KIIN','Index'].includes(e.textContent.trim()))target='/';
+    if(e.textContent.trim()==='Info')target='/#about';
+    try{const url=new URL(value,location.href);if(url.origin===location.origin){const parts=url.pathname.replace(/index\.html$/,'').split('/').filter(Boolean),slug=parts.at(-1);if(data.projects.some(p=>p.slug===slug))target='/work/'+slug+'/'}}catch{}
+   }
    let f=page.fields[id]||fields.find(([,f])=>f.type===type&&(canonical(f.original)===canonical(target)))?.[1];
    if(!f&&target!==value)f={value:target,original:target};
    if(type==='link'&&value.includes('framer.com/@thaer'))f={value:'https://www.linkedin.com/'};
