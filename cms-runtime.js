@@ -41,8 +41,6 @@
 
    if(f&&safe(f.value)){if(e.getAttribute(attr)!==f.value)e.setAttribute(attr,f.value);if(type==='image'){e.removeAttribute('srcset');if(f.alt!==undefined)e.alt=f.alt}}
   }
-  // Fit long names inside the template's existing title band.
-  for(const h of document.querySelectorAll('h1'))if(h.closest('foreignObject')&&h.scrollWidth>h.clientWidth+2){const size=parseFloat(getComputedStyle(h).fontSize)*h.clientWidth/h.scrollWidth;h.style.setProperty('font-size',size+'px','important');h.style.setProperty('line-height',h.parentElement.getBoundingClientRect().height+'px','important')}
   for(const a of document.querySelectorAll('a[href*="/work/"]')){const slug=a.getAttribute('href').split('/work/')[1]?.split('/')[0];const year={morrow:'2026',northbeam:'2024',hana:'2025',orbit:'2026'}[slug]||'';const walker=document.createTreeWalker(a,NodeFilter.SHOW_TEXT);let t;while(t=walker.nextNode())if(/^['’]\d{2}$/.test(t.nodeValue.trim()))t.nodeValue=year?"'"+year.slice(2):''}
   // Extend each existing ticker with the four additional source projects, retaining its card markup.
   if(data.schemaVersion!==2&&key==='/')for(const ul of document.querySelectorAll('ul')){
