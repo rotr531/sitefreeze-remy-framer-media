@@ -11,6 +11,7 @@
  function safe(v){return /^(https?:\/\/|mailto:|tel:|\/|\.\.?\/|#)/i.test(v)}
  function apply(){
   observer.disconnect();
+  document.title=page.title+" — KIIN";
   for(const a of document.querySelectorAll('a[href*="framer.link/thaerswailem"]')){const p=a.parentElement;if(p&&p.textContent.length<150)p.style.setProperty('display','none','important')}
 
   for(const a of document.querySelectorAll('a[href*="framer.link/LFp4JP9"],a[href*="framer.link/thaerswailem"]')){let p=a.parentElement;for(let i=0;p&&i<5;i++,p=p.parentElement){if(p.textContent.length<120&&(p.textContent.includes('Similar Templates')||p.textContent.includes('Designed in'))){p.style.setProperty('display','none','important');break}}a.style.setProperty('display','none','important')}
