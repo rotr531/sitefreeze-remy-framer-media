@@ -23,6 +23,7 @@
   while(n=w.nextNode()){const original=origins.get(n)||n.nodeValue.trim(),f=textField(original);if(f){origins.set(n,original);if(n.nodeValue.trim()!==f.value)n.nodeValue=f.value}}
   for(const e of document.querySelectorAll('[data-cms-text]')){const f=page.fields[e.dataset.cmsText];if(f&&e.textContent!==f.value)e.textContent=f.value}
   for(const e of document.querySelectorAll('img,a')){
+   if(data.schemaVersion===2&&e.tagName==='IMG')continue;
    const type=e.tagName==='IMG'?'image':'link',attr=type==='image'?'src':'href',value=origins.get(e)||e.getAttribute(attr);if(!value)continue;origins.set(e,value);
    const id=e.getAttribute('data-cms-'+type);
    let target=value;
@@ -44,13 +45,14 @@
   for(const h of document.querySelectorAll('h1'))if(h.closest('foreignObject')&&h.scrollWidth>h.clientWidth+2){const size=parseFloat(getComputedStyle(h).fontSize)*h.clientWidth/h.scrollWidth;h.style.setProperty('font-size',size+'px','important');h.style.setProperty('line-height',h.parentElement.getBoundingClientRect().height+'px','important')}
   for(const a of document.querySelectorAll('a[href*="/work/"]')){const slug=a.getAttribute('href').split('/work/')[1]?.split('/')[0];const year={morrow:'2026',northbeam:'2024',hana:'2025',orbit:'2026'}[slug]||'';const walker=document.createTreeWalker(a,NodeFilter.SHOW_TEXT);let t;while(t=walker.nextNode())if(/^['’]\d{2}$/.test(t.nodeValue.trim()))t.nodeValue=year?"'"+year.slice(2):''}
   // Extend each existing ticker with the four additional source projects, retaining its card markup.
-  if(key==='/')for(const ul of document.querySelectorAll('ul')){
+  if(data.schemaVersion!==2&&key==='/')for(const ul of document.querySelectorAll('ul')){
    const sample=ul.querySelector('li a[href*="work/relay"]');if(!sample||ul.querySelector('[data-cms-extra]'))continue;
    for(const pr of data.projects.slice(8)){
     const li=sample.closest('li').cloneNode(true);li.dataset.cmsExtra='1';for(const el of li.querySelectorAll('[data-cms-text],[data-cms-link],[data-cms-image]'))for(const a of ['text','link','image'])el.removeAttribute('data-cms-'+a);
     const a=li.querySelector('a');a.href='/work/'+pr.slug+'/';for(const img of li.querySelectorAll('img')){img.src=pr.image;img.removeAttribute('srcset');img.alt=pr.title}const tw=document.createTreeWalker(li,NodeFilter.SHOW_TEXT);let tn;while(tn=tw.nextNode())if(tn.nodeValue.trim()===data.projects[7].title)tn.nodeValue=pr.title;ul.append(li)
    }
   }
+  window.KIIN_CMS_RENDER?.(data);
   observer.observe(document.body,{subtree:true,childList:true,characterData:true,attributes:true,attributeFilter:['href','src','srcset']});
  }
  let pending=false;const observer=new MutationObserver(()=>{if(pending)return;pending=true;requestAnimationFrame(()=>{pending=false;apply()})});
