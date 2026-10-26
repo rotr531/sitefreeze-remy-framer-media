@@ -1,0 +1,11 @@
+name = "kiin-portfolio-bot"
+compatibility_date = "2025-01-01"
+main = "src/index.js"
+assets = { directory = "./public", binding = "ASSETS" }
+
+[vars]
+OPENAI_BASE_URL = "https://api.nghimmo.com/v1"
+AI_MODEL = "nghi/gpt-5.5"
+MAX_TOKENS = "800"
+
+# OPENAI_API_KEY is stored only as a Cloudflare Worker secret.

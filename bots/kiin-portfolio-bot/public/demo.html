@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KIIN Chat Widget — Demo</title>
+<style>
+  body { font-family: -apple-system, "Inter", "Segoe UI", Roboto, sans-serif; max-width: 720px; margin: 60px auto; padding: 0 20px; color: #111; line-height: 1.6; }
+  h1 { font-size: 28px; } code { background: #f2f2f2; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+  .note { border: 1px solid #e5e5e5; border-radius: 12px; padding: 16px; }
+</style>
+</head>
+<body>
+  <h1>KIIN — Portfolio Assistant (demo)</h1>
+  <p>This page shows how the chat widget looks on a website. Click the black chat button at the bottom-right corner.</p>
+  <div class="note">
+    <p><b>Local test:</b> serve this folder and add <code>?api=http://localhost:PORT/api/chat</code> to the URL to point the widget at a test backend.</p>
+    <p><b>Real deploy:</b> the widget below points at <code>/api/chat</code> on the same origin (works once this folder is deployed on Vercel).</p>
+  </div>
+  <script>
+    (function () {
+      var params = new URLSearchParams(location.search);
+      var api = params.get("api") || "/api/chat";
+      var s = document.createElement("script");
+      s.src = "kiin-chat-widget.js";
+      s.setAttribute("data-api", api);
+      s.defer = true;
+      document.body.appendChild(s);
+    })();
+  </script>
+</body>
+</html>
