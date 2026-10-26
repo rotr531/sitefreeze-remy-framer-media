@@ -34,14 +34,3 @@ a[data-v2social]{display:inline-flex;align-items:center;justify-content:center;m
 a[data-v2social] svg{width:18px!important;height:18px!important;flex:none}
 
 .ticker-item img[src*="/project-covers/"]{object-fit:contain!important;object-position:center!important}
-
-/* Compact only the native desktop home page; mobile uses its existing layout. */
-@media(min-width:810px){
- .kiin-home .framer-wDpjd .framer-1xg56a2{height:var(--kiin-desktop-hero-height,650px)!important;min-height:0!important;justify-content:flex-start!important;gap:8px!important}
- .kiin-home .framer-wDpjd .framer-142knc0{flex:none!important;height:auto!important;justify-content:flex-start!important}
- .kiin-home .framer-rao0J .framer-18b5sge-container{top:var(--kiin-desktop-strip-top,280px)!important;bottom:auto!important;height:auto!important}
- .kiin-home .framer-18b5sge-container>.framer-FWUvp{height:auto!important;min-height:0!important;padding:0!important;justify-content:flex-start!important}
- .kiin-home .framer-wDpjd .framer-1x0wlk7{padding-top:48px!important}
-}
-
-@media(min-width:810px){.kiin-home #about .framer-1x0wlk7{opacity:1!important}}
