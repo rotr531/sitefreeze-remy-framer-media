@@ -45,12 +45,19 @@
       {
         "title": "Projects",
         "items": [
+          "Kien Pham / KIDEN",
           "Yeah1 Group",
           "1Creators Platform",
           "SYE Holdings",
           "MangoPlus",
           "UIT AI Chatbot",
-          "Every Half AI Chatbot"
+          "Every Half AI Chatbot",
+          "Phan Kim Design",
+          "Bích Thủy Portfolio",
+          "Đỗ Minh Tùng Lâm Port Polio",
+          "Hồng Trà Hòa Bình",
+          "Là Yên Retreat",
+          "Nhà của Thời Thanh Xuân"
         ]
       },
       {
@@ -80,7 +87,7 @@
     "seo": {
       "title": "KIIN — Manual & AI QA Tester",
       "description": "Portfolio of Trung Kien Nguyen — Manual & AI QA Tester in Ho Chi Minh City, Vietnam.",
-      "image": "https://framerusercontent.com/images/tBUrMdh33fEYS1TkOF9KUiws9c.png?width=1200&height=825",
+      "image": "/assets/kiin-social-preview.png",
       "favicon": "",
       "canonical": "",
       "indexable": true
@@ -136,7 +143,7 @@
       "duration": "",
       "summary": "Website QA Testing — Yeah1 Group.",
       "overview": "Website QA Testing — Yeah1 Group.",
-      "cover": "/assets/project-covers/morrow-full.webp",
+      "cover": "/assets/project-covers/morrow-full-v2.webp",
       "coverAlt": "Yeah1 Group",
       "gallery": [
         {
@@ -171,7 +178,7 @@
       "duration": "",
       "summary": "Tested the internal website and mobile application, including content, livestream, messaging, voting, ticket purchasing and cross-device compatibility.",
       "overview": "Tested the internal website and mobile application, including content, livestream, messaging, voting, ticket purchasing and cross-device compatibility.",
-      "cover": "/assets/project-covers/northbeam-full.webp",
+      "cover": "/assets/project-covers/northbeam-full-v2.webp",
       "coverAlt": "1Creators Platform",
       "gallery": [
         {
@@ -224,7 +231,7 @@
       "duration": "",
       "summary": "Tested the public website and internal admin system, including content workflows, permissions, data synchronization and responsive UI.",
       "overview": "Tested the public website and internal admin system, including content workflows, permissions, data synchronization and responsive UI.",
-      "cover": "/assets/project-covers/hana-full.webp",
+      "cover": "/assets/project-covers/hana-full-v2.webp",
       "coverAlt": "SYE Holdings",
       "gallery": [
         {
@@ -271,7 +278,7 @@
       "duration": "",
       "summary": "Web & Mobile App QA Testing — MangoPlus.",
       "overview": "Web & Mobile App QA Testing — MangoPlus.",
-      "cover": "/assets/project-covers/orbit-full.webp",
+      "cover": "/assets/project-covers/orbit-full-v2.webp",
       "coverAlt": "MangoPlus",
       "gallery": [
         {
@@ -358,7 +365,7 @@
       "duration": "",
       "summary": "Tested an AI customer-support chatbot covering coffee products, pricing, store locations, purchasing policies and contextual understanding.",
       "overview": "Tested an AI customer-support chatbot covering coffee products, pricing, store locations, purchasing policies and contextual understanding.",
-      "cover": "/assets/project-covers/noveq-full.webp",
+      "cover": "/assets/project-covers/noveq-full-v2.webp",
       "coverAlt": "Every Half AI Chatbot",
       "gallery": [
         {
@@ -445,7 +452,7 @@
       "duration": "",
       "summary": "Website Design, Development & QA — Bích Thủy Portfolio.",
       "overview": "Website Design, Development & QA — Bích Thủy Portfolio.",
-      "cover": "/assets/project-covers/relay-full.webp",
+      "cover": "/assets/project-covers/relay-full-v2.webp",
       "coverAlt": "Bích Thủy Portfolio",
       "gallery": [
         {
@@ -480,7 +487,7 @@
       "duration": "",
       "summary": "Website Design, Development & QA — Đỗ Minh Tùng Lâm Port Polio.",
       "overview": "Website Design, Development & QA — Đỗ Minh Tùng Lâm Port Polio.",
-      "cover": "/assets/project-covers/tung-lam-full.webp",
+      "cover": "/assets/project-covers/tung-lam-full-v2.webp",
       "coverAlt": "Đỗ Minh Tùng Lâm Port Polio",
       "gallery": [
         {
@@ -549,7 +556,7 @@
       "duration": "",
       "summary": "E-commerce Website QA Testing — Là Yên Retreat.",
       "overview": "E-commerce Website QA Testing — Là Yên Retreat.",
-      "cover": "/assets/project-covers/la-yen-full.webp",
+      "cover": "/assets/project-covers/la-yen-full-v2.webp",
       "coverAlt": "Là Yên Retreat",
       "gallery": [
         {
