@@ -43,3 +43,5 @@ a[data-v2social] svg{width:18px!important;height:18px!important;flex:none}
  .kiin-home .framer-18b5sge-container>.framer-FWUvp{height:auto!important;min-height:0!important;padding:0!important;justify-content:flex-start!important}
  .kiin-home .framer-wDpjd .framer-1x0wlk7{padding-top:48px!important}
 }
+
+@media(min-width:810px){.kiin-home #about .framer-1x0wlk7{opacity:1!important}}
