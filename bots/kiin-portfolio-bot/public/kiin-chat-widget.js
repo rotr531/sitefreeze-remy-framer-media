@@ -142,8 +142,11 @@
     });
     history = history.slice(-10);
 
+    var controller = new AbortController();
+    var deadline = setTimeout(function () { controller.abort(); }, 60000);
     fetch(API, {
       method: "POST",
+      signal: controller.signal,
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ messages: history }),
     }).then(function (res) {
@@ -156,38 +159,55 @@
       var decoder = new TextDecoder();
       var buf = "";
       var started = false;
+      var finished = false;
+      var reply = "";
+      function consume(part) {
+        part.split("\n").forEach(function (line) {
+          var t = line.trim();
+          if (t.indexOf("data:") !== 0) return;
+          var payload = t.slice(5).trim();
+          if (payload === "[DONE]") { finished = true; return; }
+          var data;
+          try { data = JSON.parse(payload); } catch (e) { return; }
+          if (data.error) throw new Error("The AI provider could not complete this reply. Please try again.");
+          var c = typeof data.content === "string" ? data.content.replace(/[\u200b\u2060\ufeff]/g, "") : "";
+          reply += c;
+          var visible = reply.trimStart();
+          // Some providers send invisible keep-alives, then an error as text.
+          // Keep the original typing indicator until actual answer text arrives.
+          if (!visible || "[error]".indexOf(visible.toLowerCase()) === 0) return;
+          if (/^\[error\]/i.test(visible)) throw new Error("The AI provider could not complete this reply. Please try again.");
+          if (!started) { typing.textContent = ""; started = true; }
+          typing.textContent = reply;
+          msgs.scrollTop = msgs.scrollHeight;
+        });
+      }
       function pump() {
         return reader.read().then(function (r) {
-          if (r.done) return;
+          if (r.done) {
+            buf += decoder.decode();
+            if (buf.trim()) consume(buf);
+            return;
+          }
           buf += decoder.decode(r.value, { stream: true });
-          var parts = buf.split("\n\n");
+          var parts = buf.split(/\r?\n\r?\n/);
           buf = parts.pop();
-          parts.forEach(function (part) {
-            part.split("\n").forEach(function (line) {
-              var t = line.trim();
-              if (t.indexOf("data:") !== 0) return;
-              var payload = t.slice(5).trim();
-              if (payload === "[DONE]") return;
-              try {
-                var c = JSON.parse(payload).content;
-                if (c) {
-                  if (!started) { typing.textContent = ""; started = true; }
-                  typing.textContent += c;
-                  msgs.scrollTop = msgs.scrollHeight;
-                }
-              } catch (e) { /* ignore */ }
-            });
-          });
+          parts.forEach(consume);
+          if (finished) { reader.cancel().catch(function () {}); return; }
           return pump();
         });
       }
       return pump().then(function () {
+        if (!finished) throw new Error("The connection ended before the reply finished. Please try again.");
         if (!started) { typing.textContent = "No reply received. Please try again or email hello@kiin.ai."; typing.className = "k-msg err"; }
       });
     }).catch(function (e) {
-      typing.textContent = "Sorry, the chat is unavailable right now (" + e.message + "). You can reach KIIN at hello@kiin.ai.";
+      controller.abort();
+      var reason = e.name === "AbortError" ? "The AI provider took too long to reply. Please try again." : e.message;
+      typing.textContent = "Sorry, the chat is unavailable right now (" + reason + "). You can reach KIIN at hello@kiin.ai.";
       typing.className = "k-msg err";
     }).finally(function () {
+      clearTimeout(deadline);
       busy = false;
       sendBtn.disabled = false;
       input.focus();

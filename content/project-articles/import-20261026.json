@@ -1,0 +1,747 @@
+[
+  {
+    "slug": "morrow",
+    "overview": "Yeah1 Group is a media, entertainment and technology ecosystem, and its corporate website is the front door: business activities, investor relations and news, all in Vietnamese and English. I tested the website with a focus on the things a visitor notices first — whether navigation makes sense, whether content presents cleanly, and whether the layout holds up on every screen size.",
+    "blocks": [
+      {
+        "id": "22057601-92e9-43be-a0b6-db0ac02559a4",
+        "type": "text",
+        "text": "## What I did"
+      },
+      {
+        "id": "57fa6267-a096-442b-9f46-869e7ef2b7c2",
+        "type": "text",
+        "text": "Coverage centred on the key user journeys through the site: moving between sections, reading content pages, and browsing on desktop and mobile. Where something could confuse a visitor or break the browsing experience, I reported it with clear reproduction steps so the team could fix it without guessing."
+      },
+      {
+        "id": "3e35182b-15fd-4432-b08b-74743cae7dfd",
+        "type": "text",
+        "text": "## Focus areas"
+      },
+      {
+        "id": "ace6785a-a3c8-4d19-8b21-e82a6659af03",
+        "type": "text",
+        "text": "- Navigation across sections\n- Content presentation\n- Responsive layouts\n- Key user journeys\n- Issue reporting that affects the browsing experience"
+      },
+      {
+        "id": "fc339222-8b96-445a-9b5a-37a30df9c711",
+        "type": "text",
+        "text": "My process on this project followed the same steps I use on every engagement: requirement analysis first, so testing covers what actually matters; test case design around the real user journeys; test execution with clear bug reports; bug reproduction and fix verification after each fix; and regression testing before release, so a fix in one place does not break another."
+      },
+      {
+        "id": "3be3e181-ba0e-4b65-9282-226b3371952d",
+        "type": "image",
+        "url": "/assets/articles/yeah1-01-top.webp",
+        "alt": "Yeah1 Group homepage — desktop",
+        "text": "Yeah1 Group homepage — desktop."
+      },
+      {
+        "id": "2e7fbee2-0896-40e9-b8e8-395803a7bdcd",
+        "type": "image",
+        "url": "/assets/articles/yeah1-02-mid.webp",
+        "alt": "Main content section — desktop",
+        "text": "Main content section — desktop."
+      },
+      {
+        "id": "dab91121-5b1d-4836-8eb7-913228046dc8",
+        "type": "image",
+        "url": "/assets/articles/yeah1-03-mobile.webp",
+        "alt": "Homepage — mobile",
+        "text": "Homepage — mobile."
+      },
+      {
+        "id": "830f50c2-cf33-493d-ba56-e3331cf95a90",
+        "type": "link",
+        "url": "https://yeah1group.com/",
+        "text": "Visit the live site ↗"
+      }
+    ],
+    "role": "QA Tester",
+    "liveUrl": "https://yeah1group.com/",
+    "scope": "Website QA Testing",
+    "year": "2026",
+    "articleTitle": "Yeah1 Group — Website QA Testing",
+    "sourceFile": "articles/01-yeah1-group.md"
+  },
+  {
+    "slug": "northbeam",
+    "overview": "1Creators is the fandom platform behind the YFan app, where fans follow content, join livestreams, message, vote and buy event tickets. I tested the platform's internal website and mobile application — the two surfaces fans actually touch every day.",
+    "blocks": [
+      {
+        "id": "2d3e131b-2d66-4865-8222-78cd6a2d641a",
+        "type": "text",
+        "text": "## What I did"
+      },
+      {
+        "id": "f27358eb-2398-4f31-90ee-3e94a5786d3e",
+        "type": "text",
+        "text": "Testing covered the full fan journey: browsing content, watching livestreams, messaging, voting, and purchasing tickets — plus cross-device compatibility, so the experience stays consistent whether a fan opens it on a phone or a desktop browser."
+      },
+      {
+        "id": "e84aa7f2-b6e0-423c-9cb4-756db08ed7cb",
+        "type": "text",
+        "text": "## Focus areas"
+      },
+      {
+        "id": "2c90010a-49b3-46f9-8fa8-3629bf04e551",
+        "type": "text",
+        "text": "- Content browsing\n- Livestream\n- Messaging\n- Voting\n- Ticket purchasing\n- Cross-device compatibility"
+      },
+      {
+        "id": "cd0bea67-4188-4da4-8ea9-def83b337e65",
+        "type": "text",
+        "text": "My process on this project followed the same steps I use on every engagement: requirement analysis first, so testing covers what actually matters; test case design around the real user journeys on both web and mobile; test execution with clear bug reports; bug reproduction and fix verification after each fix; and regression testing before release, so a fix in one place does not break another."
+      },
+      {
+        "id": "14bb9aae-a2e1-4c3d-9484-6493addea4c1",
+        "type": "image",
+        "url": "/assets/articles/creators-01-top.webp",
+        "alt": "1Creators application page — desktop",
+        "text": "1Creators application page — desktop."
+      },
+      {
+        "id": "f32613ad-8efd-4dbd-af1d-9434b699ec48",
+        "type": "image",
+        "url": "/assets/articles/creators-02-mid.webp",
+        "alt": "Main content section — desktop",
+        "text": "Main content section — desktop."
+      },
+      {
+        "id": "c0912e47-d286-487f-8314-dbf0cdbe6d8a",
+        "type": "image",
+        "url": "/assets/articles/creators-03-mobile.webp",
+        "alt": "Application page — mobile",
+        "text": "Application page — mobile."
+      },
+      {
+        "id": "e3cdeb5c-7752-4a42-bdc7-8c24b87a9614",
+        "type": "link",
+        "url": "https://1creators.com/vi/application",
+        "text": "Visit the live site ↗"
+      }
+    ],
+    "role": "QA Tester",
+    "liveUrl": "https://1creators.com/vi/application",
+    "scope": "Web & Mobile App Testing",
+    "year": "2024",
+    "articleTitle": "1Creators Platform — Web & Mobile App Testing",
+    "sourceFile": "articles/02-1creators-platform.md"
+  },
+  {
+    "slug": "hana",
+    "overview": "SYE Holdings, a member of YeaH1 Group, runs a public website and an internal admin system behind it. I tested both sides: what visitors see, and the tools the team uses to run the site day to day.",
+    "blocks": [
+      {
+        "id": "014e4e3a-5e55-43db-9ed4-147be5c1e3f4",
+        "type": "text",
+        "text": "## What I did"
+      },
+      {
+        "id": "5c6a3b3b-708e-4eba-aaa8-81a85cb5ac38",
+        "type": "text",
+        "text": "On the public website, testing focused on content and responsive UI. On the admin side, it covered the workflows the team depends on — publishing content, managing permissions, and keeping data in sync between the admin and the public site — so a change made internally shows up correctly for visitors."
+      },
+      {
+        "id": "ef7b17a3-6449-4c71-909e-12664515450b",
+        "type": "text",
+        "text": "## Focus areas"
+      },
+      {
+        "id": "6ad00b62-eb83-4de4-b3b1-7f11244cdd32",
+        "type": "text",
+        "text": "- Content workflows\n- Permissions\n- Data synchronization\n- Responsive UI\n- Public website and internal admin system"
+      },
+      {
+        "id": "e9caaa54-930f-4bb7-bbb3-fafacd4722a3",
+        "type": "text",
+        "text": "My process on this project followed the same steps I use on every engagement: requirement analysis first, so testing covers what actually matters; test case design around the real user journeys; test execution with clear bug reports; bug reproduction and fix verification after each fix; and regression testing before release, so a fix in one place does not break another."
+      },
+      {
+        "id": "c3e5b4b5-cfe8-4331-ad93-86827024f9bc",
+        "type": "image",
+        "url": "/assets/articles/sye-01-top.webp",
+        "alt": "SYE Holdings homepage — desktop",
+        "text": "SYE Holdings homepage — desktop."
+      },
+      {
+        "id": "eedc84eb-c1de-4e7b-9372-49a6bf0d5069",
+        "type": "image",
+        "url": "/assets/articles/sye-02-mid.webp",
+        "alt": "Main content section — desktop",
+        "text": "Main content section — desktop."
+      },
+      {
+        "id": "62993827-13f7-4c35-90f2-0fedfc114218",
+        "type": "image",
+        "url": "/assets/articles/sye-03-mobile.webp",
+        "alt": "Homepage — mobile",
+        "text": "Homepage — mobile."
+      },
+      {
+        "id": "5145eeff-847d-439f-b533-050030539a5c",
+        "type": "link",
+        "url": "https://www.syeholdings.co/",
+        "text": "Visit the live site ↗"
+      }
+    ],
+    "role": "QA Tester",
+    "liveUrl": "https://www.syeholdings.co/",
+    "scope": "Website & Admin Testing",
+    "year": "2025",
+    "articleTitle": "SYE Holdings — Website & Admin Testing",
+    "sourceFile": "articles/03-sye-holdings.md"
+  },
+  {
+    "slug": "orbit",
+    "overview": "MangoPlus is a streaming service for exclusive shows and popular films. I tested its website and mobile application, where the core experience is discovery: finding something to watch quickly, and having the interface behave the same way on every device.",
+    "blocks": [
+      {
+        "id": "1908bb55-cd74-427c-8e6c-9ae0a9c047a2",
+        "type": "text",
+        "text": "## What I did"
+      },
+      {
+        "id": "17357b36-c982-4438-a599-a5efce1c5c68",
+        "type": "text",
+        "text": "Coverage focused on content discovery, navigation and consistent interface behavior across devices — browsing catalogues, moving between sections, and checking that what works on desktop also works on mobile."
+      },
+      {
+        "id": "97372ea5-31e8-4e1b-ab22-17d45a7c81bc",
+        "type": "text",
+        "text": "## Focus areas"
+      },
+      {
+        "id": "0bef8c3c-7ed1-4568-8a39-2181a118f094",
+        "type": "text",
+        "text": "- Content discovery\n- Navigation\n- Consistent interface behavior across devices\n- Website and mobile application"
+      },
+      {
+        "id": "e5fcfc17-920c-4534-ab42-794bbb5ea326",
+        "type": "text",
+        "text": "My process on this project followed the same steps I use on every engagement: requirement analysis first, so testing covers what actually matters; test case design around the real user journeys on both web and mobile; test execution with clear bug reports; bug reproduction and fix verification after each fix; and regression testing before release, so a fix in one place does not break another."
+      },
+      {
+        "id": "769704c6-96f5-4700-8081-f40f17aa387a",
+        "type": "image",
+        "url": "/assets/articles/mangoplus-01-top.webp",
+        "alt": "MangoPlus homepage with first-visit terms consent — desktop",
+        "text": "MangoPlus homepage with first-visit terms consent — desktop."
+      },
+      {
+        "id": "2ce8cd54-613f-42d5-8e94-03cf896e8658",
+        "type": "image",
+        "url": "/assets/articles/mangoplus-02-mid.webp",
+        "alt": "Content catalogue — desktop",
+        "text": "Content catalogue — desktop."
+      },
+      {
+        "id": "f35e9ebb-8dd3-412a-8fd1-52acc1e981c9",
+        "type": "link",
+        "url": "https://mangoplus.vn/",
+        "text": "Visit the live site ↗"
+      }
+    ],
+    "role": "QA Tester",
+    "liveUrl": "https://mangoplus.vn/",
+    "scope": "Web & Mobile App QA Testing",
+    "year": "2026",
+    "articleTitle": "MangoPlus — Web & Mobile App QA Testing",
+    "sourceFile": "articles/04-mangoplus.md"
+  },
+  {
+    "slug": "field",
+    "overview": "UIT — the University of Information Technology, VNU-HCMC — runs an AI consultation chatbot that answers prospective and current students. I tested the chatbot itself: not just whether it replies, but whether its replies are right, and how it behaves when a conversation goes off track.",
+    "blocks": [
+      {
+        "id": "3ba0a8f6-3a08-401f-9c3d-f3e993595cb7",
+        "type": "text",
+        "text": "## What I did"
+      },
+      {
+        "id": "48d34c29-3a8e-444d-b077-396b39d8cabc",
+        "type": "text",
+        "text": "Testing focused on response accuracy, conversation flows, UI behavior and out-of-scope question handling — the four places a consultation chatbot earns or loses trust. A wrong answer, a broken flow, or a confident reply to a question it should not answer are all defects, and each one was reported with the exact conversation that produced it."
+      },
+      {
+        "id": "9463b9d8-0f75-40d3-8518-b108b7ca0e35",
+        "type": "text",
+        "text": "## Focus areas"
+      },
+      {
+        "id": "26b7186a-e6c5-406b-8df1-60eef24ffbc4",
+        "type": "text",
+        "text": "- Response accuracy\n- Conversation flows\n- UI behavior\n- Out-of-scope question handling"
+      },
+      {
+        "id": "92189a58-d602-409a-a4d2-91044a99472a",
+        "type": "text",
+        "text": "My process on this project followed the same steps I use on every engagement: requirement analysis first, so testing covers the conversations users actually have; test case design around the main flows and the edge cases; test execution with clear bug reports; bug reproduction and fix verification after each fix; and regression testing before release, so a fix in one place does not break another."
+      },
+      {
+        "id": "83d88517-7578-4d58-a4ba-b5b48254ba0b",
+        "type": "image",
+        "url": "/assets/articles/uit-01-top.webp",
+        "alt": "UIT university homepage — desktop",
+        "text": "UIT university homepage — desktop."
+      },
+      {
+        "id": "3f7dbcb5-39c5-43f8-b347-9b04d92403ae",
+        "type": "image",
+        "url": "/assets/articles/uit-02-mid.webp",
+        "alt": "Main content section — desktop",
+        "text": "Main content section — desktop."
+      },
+      {
+        "id": "e65f77c8-3f5f-4d99-bb77-1a80ac97639e",
+        "type": "image",
+        "url": "/assets/articles/uit-03-mobile.webp",
+        "alt": "Homepage — mobile",
+        "text": "Homepage — mobile."
+      },
+      {
+        "id": "a02164e2-8dd3-4816-b629-3e533b0b7541",
+        "type": "text",
+        "text": "Note: the chatbot itself runs inside UIT's consultation service, so the link above goes to the university's public homepage."
+      },
+      {
+        "id": "9036355d-e52a-417c-8c4c-92297e1a0ec6",
+        "type": "link",
+        "url": "https://www.uit.edu.vn/",
+        "text": "Visit the live site ↗"
+      }
+    ],
+    "role": "QA Tester",
+    "liveUrl": "https://www.uit.edu.vn/",
+    "scope": "AI Chatbot Testing",
+    "year": "2025",
+    "articleTitle": "UIT AI Chatbot — AI Chatbot Testing",
+    "sourceFile": "articles/05-uit-ai-chatbot.md"
+  },
+  {
+    "slug": "luma",
+    "overview": "Phan Kim Design is an architecture and interior studio, and its portfolio website is built around one idea, stated on the homepage: every space needs a direction. I designed, developed and QA'd the site, presenting the studio's selected projects clearly and letting the photography carry the work.",
+    "blocks": [
+      {
+        "id": "8ff104aa-73a3-48a0-b573-d85bbabe5343",
+        "type": "text",
+        "text": "## What I did"
+      },
+      {
+        "id": "158e3cb6-6a1c-40ae-ac3e-adb9781cd434",
+        "type": "text",
+        "text": "The work focused on presenting projects clearly and checking image display, navigation and responsive layouts — so a project looks as considered on a phone as it does on a large screen, and a visitor can move through the portfolio without friction."
+      },
+      {
+        "id": "4251e36e-397e-45cb-b70a-5c3161ac047c",
+        "type": "text",
+        "text": "## Focus areas"
+      },
+      {
+        "id": "63523d61-97d5-419d-b640-3d51d972fde5",
+        "type": "text",
+        "text": "- Project presentation\n- Image display\n- Navigation\n- Responsive layouts"
+      },
+      {
+        "id": "31335845-af02-486b-8dd5-be4b1408005f",
+        "type": "text",
+        "text": "My process on this project covered the full arc from design to release: shaping the site around the work it needs to present, building it, then testing it the way a visitor would use it — navigation, image display and responsive behavior — with bug reproduction and fix verification after each fix and a final regression pass before release."
+      },
+      {
+        "id": "b6bf32e7-9262-4e47-82e1-a9f13ebdb872",
+        "type": "image",
+        "url": "/assets/articles/phankim-01-top.webp",
+        "alt": "Phan Kim Design homepage — desktop",
+        "text": "Phan Kim Design homepage — desktop."
+      },
+      {
+        "id": "cbad4bf6-6fa6-4a14-bccb-a20746775b09",
+        "type": "image",
+        "url": "/assets/articles/phankim-02-mid.webp",
+        "alt": "Project list — desktop",
+        "text": "Project list — desktop."
+      },
+      {
+        "id": "9b44b9b3-31eb-4e17-8795-a46b3c73cf72",
+        "type": "image",
+        "url": "/assets/articles/phankim-03-mobile.webp",
+        "alt": "Homepage — mobile",
+        "text": "Homepage — mobile."
+      },
+      {
+        "id": "7659c8b5-7fe5-4418-a69b-cc2d788ccce3",
+        "type": "link",
+        "url": "https://phan-kim-design26.pages.dev/",
+        "text": "Visit the live site ↗"
+      }
+    ],
+    "role": "QA Tester",
+    "liveUrl": "https://phan-kim-design26.pages.dev/",
+    "scope": "Website Design, Development & QA",
+    "year": "2026",
+    "articleTitle": "Phan Kim Design — Website Design, Development & QA",
+    "sourceFile": "articles/06-phan-kim-design.md"
+  },
+  {
+    "slug": "relay",
+    "overview": "This is the portfolio of Phạm Thị Bích Thủy, a graphic designer and illustrator open to new work. I designed, developed and QA'd the site around what a portfolio has to do first: show the work, clearly and without distraction.",
+    "blocks": [
+      {
+        "id": "9f5a2935-d1b5-4eb2-ad30-b4398131e957",
+        "type": "text",
+        "text": "## What I did"
+      },
+      {
+        "id": "cd8f66e9-a506-4d90-a782-19136c299fbd",
+        "type": "text",
+        "text": "The work focused on the project gallery, visual content and a consistent browsing experience across screen sizes — so illustrations and design projects present cleanly whether a visitor opens the site on desktop or on a phone."
+      },
+      {
+        "id": "c6d9788b-6698-4002-aad7-29f15da8e04e",
+        "type": "text",
+        "text": "## Focus areas"
+      },
+      {
+        "id": "79411941-4260-4853-b3c4-2d8d90a37df1",
+        "type": "text",
+        "text": "- Project gallery\n- Visual content\n- Consistent browsing experience across screen sizes"
+      },
+      {
+        "id": "2467782b-91b7-45f5-aff6-7b5722ef756f",
+        "type": "text",
+        "text": "My process on this project covered the full arc from design to release: shaping the site around the work it needs to present, building it, then testing it the way a visitor would use it — navigation, image display and responsive behavior — with bug reproduction and fix verification after each fix and a final regression pass before release."
+      },
+      {
+        "id": "bd4634d5-0ddd-4880-beba-13faf7ddbed0",
+        "type": "image",
+        "url": "/assets/articles/bichthuy-01-top.webp",
+        "alt": "Bích Thủy portfolio homepage — desktop",
+        "text": "Bích Thủy portfolio homepage — desktop."
+      },
+      {
+        "id": "70d49adc-3552-4e37-802f-62a6f1bd93fb",
+        "type": "image",
+        "url": "/assets/articles/bichthuy-02-mid.webp",
+        "alt": "Project gallery — desktop",
+        "text": "Project gallery — desktop."
+      },
+      {
+        "id": "4897204c-4252-44c2-a73b-faf199c672c5",
+        "type": "image",
+        "url": "/assets/articles/bichthuy-03-mobile.webp",
+        "alt": "Homepage — mobile",
+        "text": "Homepage — mobile."
+      },
+      {
+        "id": "ddd87f82-8a88-48ff-9e77-efe61e90b53a",
+        "type": "link",
+        "url": "https://bichthuy-portfolio.framer.website/",
+        "text": "Visit the live site ↗"
+      }
+    ],
+    "role": "QA Tester",
+    "liveUrl": "https://bichthuy-portfolio.framer.website/",
+    "scope": "Website Design, Development & QA",
+    "year": "2026",
+    "articleTitle": "Bích Thủy Portfolio — Website Design, Development & QA",
+    "sourceFile": "articles/07-bich-thuy-portfolio.md"
+  },
+  {
+    "slug": "tung-lam",
+    "overview": "This is the portfolio of Đỗ Minh Tùng Lâm, a UI/UX designer and design engineer. I designed, developed and QA'd the site around presenting the designer's profile and selected work — the two things a visitor comes to a portfolio to find.",
+    "blocks": [
+      {
+        "id": "8eb48d9a-029c-450a-9c0b-bd941aaf618f",
+        "type": "text",
+        "text": "## What I did"
+      },
+      {
+        "id": "6f0b74a6-858e-4f41-a76d-006e8a7ea6f2",
+        "type": "text",
+        "text": "The work focused on presenting the profile and selected work, with checks for navigation and responsive behavior — so the site reads well on a large screen and stays usable on a phone."
+      },
+      {
+        "id": "9f45bbf2-f857-44a9-9d5b-232f57468523",
+        "type": "text",
+        "text": "## Focus areas"
+      },
+      {
+        "id": "66d8ca8e-4726-4c04-a60f-f09a1cc8c6f2",
+        "type": "text",
+        "text": "- Designer profile presentation\n- Selected work presentation\n- Navigation\n- Responsive behavior"
+      },
+      {
+        "id": "704754e1-382c-47bc-ba39-61c500a2b888",
+        "type": "text",
+        "text": "My process on this project covered the full arc from design to release: shaping the site around the work it needs to present, building it, then testing it the way a visitor would use it — navigation, image display and responsive behavior — with bug reproduction and fix verification after each fix and a final regression pass before release."
+      },
+      {
+        "id": "abca1797-171c-4fda-9d20-86501a6fced5",
+        "type": "image",
+        "url": "/assets/articles/tunglam-01-top.webp",
+        "alt": "Đỗ Minh Tùng Lâm portfolio homepage — desktop",
+        "text": "Đỗ Minh Tùng Lâm portfolio homepage — desktop."
+      },
+      {
+        "id": "73eba535-e3ad-417b-aff6-8f614c57156d",
+        "type": "image",
+        "url": "/assets/articles/tunglam-02-mid.webp",
+        "alt": "Main content section — desktop",
+        "text": "Main content section — desktop."
+      },
+      {
+        "id": "26a1d670-af35-43bd-894e-321f3e440dec",
+        "type": "image",
+        "url": "/assets/articles/tunglam-03-mobile.webp",
+        "alt": "Homepage — mobile",
+        "text": "Homepage — mobile."
+      },
+      {
+        "id": "ceef1433-3c33-4c84-8a76-1b9f80f6773d",
+        "type": "link",
+        "url": "https://dominhtunglam.com/",
+        "text": "Visit the live site ↗"
+      }
+    ],
+    "role": "QA Tester",
+    "liveUrl": "https://dominhtunglam.com/",
+    "scope": "Website Design, Development & QA",
+    "year": "2026",
+    "articleTitle": "Đỗ Minh Tùng Lâm Portfolio — Website Design, Development & QA",
+    "sourceFile": "articles/08-do-minh-tung-lam-portfolio.md"
+  },
+  {
+    "slug": "hong-tra",
+    "overview": "Hồng Trà Hòa Bình is a tea house, and its website presents the house, its menu, visits and blog. I designed, developed and QA'd the site with the same priority a tea house has in person: clear presentation, easy navigation, and a consistent feel on desktop and mobile.",
+    "blocks": [
+      {
+        "id": "f1227d07-4b8c-4520-8284-ce6fe431b3b8",
+        "type": "text",
+        "text": "## What I did"
+      },
+      {
+        "id": "69b3bd97-a94a-4fd0-a742-bbb7129c060a",
+        "type": "text",
+        "text": "The work focused on clear content presentation, navigation and consistent layouts across desktop and mobile — so a visitor can find the menu, plan a visit, or read the blog without friction on any device."
+      },
+      {
+        "id": "c4d519a4-d00d-4c7c-843f-fefb91b7d70b",
+        "type": "text",
+        "text": "## Focus areas"
+      },
+      {
+        "id": "bfa04de5-50d0-4dfa-9cb9-4dab39c82471",
+        "type": "text",
+        "text": "- Clear content presentation\n- Navigation\n- Consistent layouts across desktop and mobile"
+      },
+      {
+        "id": "38773fb7-ce18-4be4-8b97-7a260795e7b2",
+        "type": "text",
+        "text": "My process on this project covered the full arc from design to release: shaping the site around the work it needs to present, building it, then testing it the way a visitor would use it — navigation, image display and responsive behavior — with bug reproduction and fix verification after each fix and a final regression pass before release."
+      },
+      {
+        "id": "92e1e01e-e3ca-49b3-9cf0-40d3d6d6ecf3",
+        "type": "image",
+        "url": "/assets/articles/hongtra-01-top.webp",
+        "alt": "Hồng Trà Hòa Bình homepage — desktop",
+        "text": "Hồng Trà Hòa Bình homepage — desktop."
+      },
+      {
+        "id": "924ef0a8-29e7-44c5-8544-e7c59e6bc46c",
+        "type": "image",
+        "url": "/assets/articles/hongtra-02-mid.webp",
+        "alt": "Main content section — desktop",
+        "text": "Main content section — desktop."
+      },
+      {
+        "id": "a1bfc8c0-ca81-49a9-8353-d4142700a53b",
+        "type": "image",
+        "url": "/assets/articles/hongtra-03-mobile.webp",
+        "alt": "Homepage — mobile",
+        "text": "Homepage — mobile."
+      },
+      {
+        "id": "ddf9024b-9085-4212-888d-8ebb4a3f8dd8",
+        "type": "link",
+        "url": "https://hongtrahoabinh.com/",
+        "text": "Visit the live site ↗"
+      }
+    ],
+    "role": "QA Tester",
+    "liveUrl": "https://hongtrahoabinh.com/",
+    "scope": "Website Design, Development & QA",
+    "year": "2026",
+    "articleTitle": "Hồng Trà Hòa Bình — Website Design, Development & QA",
+    "sourceFile": "articles/09-hong-tra-hoa-binh.md"
+  },
+  {
+    "slug": "la-yen",
+    "overview": "Là Yên Retreat is a retreat whose website sells stays: browsing accommodation, rooms and information before booking. I tested the e-commerce website with a focus on the journey a guest takes before deciding — finding a room, understanding what it offers, and seeing it presented well.",
+    "blocks": [
+      {
+        "id": "9039d38c-1da0-4460-b436-fdb94b909536",
+        "type": "text",
+        "text": "## What I did"
+      },
+      {
+        "id": "a349739d-8c4a-434d-a85f-1cdc67e1e0ca",
+        "type": "text",
+        "text": "Coverage focused on browsing accommodation information, image presentation and responsive user journeys — so room details and photography hold up on desktop and mobile, and a guest can move from browsing to booking without confusion."
+      },
+      {
+        "id": "a1249def-7978-4cf2-89ef-30c38ea48ab8",
+        "type": "text",
+        "text": "## Focus areas"
+      },
+      {
+        "id": "bbc81cd8-b9d0-47f3-88c1-d86aa3a5a993",
+        "type": "text",
+        "text": "- Browsing accommodation information\n- Image presentation\n- Responsive user journeys"
+      },
+      {
+        "id": "3427b871-75de-4bd9-a257-7f3b5d069143",
+        "type": "text",
+        "text": "My process on this project followed the same steps I use on every engagement: requirement analysis first, so testing covers what actually matters; test case design around the real user journeys; test execution with clear bug reports; bug reproduction and fix verification after each fix; and regression testing before release, so a fix in one place does not break another."
+      },
+      {
+        "id": "0d4eb6f4-28a0-456e-aead-9391231fa551",
+        "type": "link",
+        "url": "https://layen.vn/",
+        "text": "Visit the live site ↗"
+      }
+    ],
+    "role": "QA Tester",
+    "liveUrl": "https://layen.vn/",
+    "scope": "E-commerce Website QA Testing",
+    "year": "2026",
+    "articleTitle": "Là Yên Retreat — E-commerce Website QA Testing",
+    "sourceFile": "articles/10-la-yen-retreat.md"
+  },
+  {
+    "slug": "thanh-xuan",
+    "overview": "Nhà của Thời Thanh Xuân is an e-commerce site for natural products, including essential oils. I tested the store with a focus on the shopping journey: product information a buyer needs before deciding, navigation that makes the catalogue easy to browse, and an interface that behaves consistently across screen sizes.",
+    "blocks": [
+      {
+        "id": "3bb36352-332f-481d-8bd6-525cf6184339",
+        "type": "text",
+        "text": "## What I did"
+      },
+      {
+        "id": "f068fcfa-3b4c-4904-bfe3-dbe109cd4da5",
+        "type": "text",
+        "text": "Coverage focused on product information, navigation and interface behavior across screen sizes — so a product page answers the buyer's questions, the catalogue is easy to move through, and the store works the same on desktop and mobile."
+      },
+      {
+        "id": "7ce7c8a8-2bdc-43f2-a681-79595a4a876f",
+        "type": "text",
+        "text": "## Focus areas"
+      },
+      {
+        "id": "a6bd2e12-fd7b-45c4-8d9f-205945c5851f",
+        "type": "text",
+        "text": "- Product information\n- Navigation\n- Interface behavior across screen sizes"
+      },
+      {
+        "id": "e7cfab09-611a-44a6-9b5e-c7428426c7b5",
+        "type": "text",
+        "text": "My process on this project followed the same steps I use on every engagement: requirement analysis first, so testing covers what actually matters; test case design around the real user journeys; test execution with clear bug reports; bug reproduction and fix verification after each fix; and regression testing before release, so a fix in one place does not break another."
+      },
+      {
+        "id": "26765adf-dc82-422c-b00e-d921ad78e240",
+        "type": "image",
+        "url": "/assets/articles/thanhxuan-01-top.webp",
+        "alt": "Nhà của Thời Thanh Xuân homepage — desktop",
+        "text": "Nhà của Thời Thanh Xuân homepage — desktop."
+      },
+      {
+        "id": "ce6e8758-cf52-4eaf-acaf-40dd8dbbe80c",
+        "type": "image",
+        "url": "/assets/articles/thanhxuan-02-mid.webp",
+        "alt": "Product listings — desktop",
+        "text": "Product listings — desktop."
+      },
+      {
+        "id": "ed3043f1-c9b2-4ff7-afe9-3de0b87c0dd8",
+        "type": "image",
+        "url": "/assets/articles/thanhxuan-03-mobile.webp",
+        "alt": "Homepage — mobile",
+        "text": "Homepage — mobile."
+      },
+      {
+        "id": "1970a27e-ff42-4613-97c6-97bdebeecaab",
+        "type": "link",
+        "url": "https://nhacuathoithanhxuan.com/",
+        "text": "Visit the live site ↗"
+      }
+    ],
+    "role": "QA Tester",
+    "liveUrl": "https://nhacuathoithanhxuan.com/",
+    "scope": "E-commerce Website QA Testing",
+    "year": "2026",
+    "articleTitle": "Nhà của Thời Thanh Xuân — E-commerce Website QA Testing",
+    "sourceFile": "articles/11-nha-cua-thoi-thanh-xuan.md"
+  },
+  {
+    "slug": "kien-pham",
+    "overview": "Kien Pham, also known as KIDEN, runs a personal portfolio that brings together product design, music and selected works — with sections for design, music, about, highlights and articles. I tested the portfolio website across devices, covering the things a personal site lives or dies by: navigation that makes sense, content that presents cleanly, and a layout that holds up on desktop and mobile.",
+    "blocks": [
+      {
+        "id": "04e2d63a-6a4b-4211-beec-958a4f013985",
+        "type": "text",
+        "text": "## What I did"
+      },
+      {
+        "id": "4f0cc207-6f5b-4c03-bba2-cd9e18f5ec42",
+        "type": "text",
+        "text": "Testing followed the key visitor journeys: landing on the homepage, moving between design and music work, reading articles, and reaching out. Where navigation, content presentation or responsive behavior could trip a visitor up, I reported it with clear reproduction steps."
+      },
+      {
+        "id": "481dab63-79e0-48cf-bebc-737f06c3c852",
+        "type": "text",
+        "text": "## Focus areas"
+      },
+      {
+        "id": "a1be815a-0110-4550-8bef-ec623e6ece4d",
+        "type": "text",
+        "text": "- Navigation\n- Content presentation\n- Responsive behavior\n- Key visitor journeys"
+      },
+      {
+        "id": "4470defc-3a70-49b3-8102-617b60609aaf",
+        "type": "text",
+        "text": "My process on this project followed the same steps I use on every engagement: requirement analysis first, so testing covers what actually matters; test case design around the real user journeys; test execution with clear bug reports; bug reproduction and fix verification after each fix; and regression testing before release, so a fix in one place does not break another."
+      },
+      {
+        "id": "8a172035-6a5a-4f8f-a0b6-b2aff8e34f47",
+        "type": "image",
+        "url": "/assets/articles/kienpham-01-top.webp",
+        "alt": "Kien Pham / KIDEN homepage — desktop",
+        "text": "Kien Pham / KIDEN homepage — desktop."
+      },
+      {
+        "id": "cd8d5c46-e241-4e23-a438-d6d65d7c8433",
+        "type": "image",
+        "url": "/assets/articles/kienpham-02-mid.webp",
+        "alt": "Main content section — desktop",
+        "text": "Main content section — desktop."
+      },
+      {
+        "id": "38c364f2-dc84-4a01-a209-eb1f9a7ff421",
+        "type": "image",
+        "url": "/assets/articles/kienpham-03-mobile.webp",
+        "alt": "Homepage — mobile",
+        "text": "Homepage — mobile."
+      },
+      {
+        "id": "bb59c3c2-9134-402a-905e-a5a44cfd2e49",
+        "type": "link",
+        "url": "https://www.kienpham.space/",
+        "text": "Visit the live site ↗"
+      }
+    ],
+    "role": "QA Tester",
+    "liveUrl": "https://www.kienpham.space/",
+    "scope": "Portfolio Website QA",
+    "year": "",
+    "articleTitle": "Kien Pham / KIDEN — Portfolio Website QA",
+    "sourceFile": "articles/12-kien-pham-kiden.md"
+  }
+]
