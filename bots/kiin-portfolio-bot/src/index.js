@@ -88,7 +88,7 @@ async function portfolioAnswer(question, env) {
     const items = vi ? ['Kiểm thử thủ công & chức năng', 'Kiểm tra UI/UX', 'Kiểm thử chatbot AI và chất lượng phản hồi', 'Kiểm thử hệ thống quản trị', 'Kiểm thử web & mobile'] : doc?.site?.lists?.[0]?.items || ['Manual & Functional Testing', 'UI/UX Validation', 'AI Chatbot Testing', 'Admin System Testing', 'Web & Mobile Testing'];
     return (vi ? 'Kiên có thể hỗ trợ:\n\n' : 'Trung Kien offers:\n\n') + items.map(t => '- ' + t).join('\n') + (vi ? `\n\nTrao đổi dự án qua ${contact}.` : `\n\nDiscuss your project at ${contact}.`);
   }
-  if (kind === 'projects' && doc) return (vi ? 'Các dự án trong portfolio:\n\n' : 'Selected portfolio projects:\n\n') + doc.projects.filter(p => p.status === 'published').map(p => `- [${p.title}](https://hellokiinai.pages.dev/work/${p.slug}/)${p.year ? ' — ' + p.year : ''}`).join('\n');
+  if (kind === 'projects' && doc) return (vi ? 'Các dự án trong portfolio:\n\n' : 'Selected portfolio projects:\n\n') + doc.projects.filter(p => p.status === 'published' && !p.hideFromLists && p.slug !== 'noveq').map(p => `- [${p.title}](https://hellokiinai.pages.dev/work/${p.slug}/)${p.year ? ' — ' + p.year : ''}`).join('\n');
   if (kind === 'yeah1' && doc) {
     const p = doc.projects.find(p => p.slug === 'morrow');
     if (p) return (vi ? 'Kiên kiểm thử website Yeah1 Group, tập trung vào điều hướng, trình bày nội dung, bố cục responsive và các hành trình người dùng chính.' : p.overview) + `\n\n[${vi ? 'Xem dự án Yeah1 Group' : 'View the Yeah1 Group project'}](https://hellokiinai.pages.dev/work/${p.slug}/)`;

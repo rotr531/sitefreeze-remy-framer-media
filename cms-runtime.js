@@ -2,6 +2,19 @@
  if('serviceWorker' in navigator)navigator.serviceWorker.getRegistrations().then(registrations=>Promise.all(registrations.filter(reg=>new URL(reg.scope).origin===location.origin).map(reg=>reg.unregister()))).catch(()=>{});
 
  const key=location.pathname.replace(/index\.html$/,'').replace(/\/$/,'')+'/',preview=new URLSearchParams(location.search).has('cms-preview');
+
+ const embedded=document.getElementById('kiin-initial-data');
+ let initial;try{initial=embedded&&JSON.parse(embedded.textContent)}catch{}
+ if(initial?.schemaVersion===2){
+  let current=initial,pending=false;
+  const observer=new MutationObserver(()=>{if(pending)return;pending=true;requestAnimationFrame(()=>{pending=false;applyCurrent()})});
+  function applyCurrent(){observer.disconnect();window.KIIN_CMS_RENDER?.(current);observer.observe(document.body,{subtree:true,childList:true,characterData:true,attributes:true,attributeFilter:['href','src','srcset']});}
+  if(document.readyState!=='complete')document.addEventListener('DOMContentLoaded',applyCurrent,{once:true});else applyCurrent();
+  window.addEventListener('resize',applyCurrent);
+  fetch('/api/cms/'+(preview?'draft':'public'),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(next=>{if(next?.schemaVersion===2&&(next.revision!==current.revision||next.updatedAt!==current.updatedAt)){current=next;applyCurrent()}}).catch(()=>{});
+  if(preview){const badge=document.createElement('a');badge.href='/admin/';badge.textContent='BẢN NHÁP · Quay lại CMS';badge.style.cssText='position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:2147483647;background:#263c2e;color:#fff;padding:12px 20px;border-radius:30px;font:13px system-ui';document.body.append(badge)}
+  return;
+ }
  let data;try{const r=await fetch('/api/cms/'+(preview?'draft':'public'),{cache:'no-store'});if(!r.ok)throw Error();data=await r.json()}catch{return}
  const aliases=await (await fetch('/cms-aliases.json')).json(); const page=data.pages[key]||data.pages['/'],fields=Object.entries(page.fields),textMap=new Map(fields.filter(([,f])=>f.type==='text').map(([id,f])=>[f.original,{id,...f}]));
  const origins=new WeakMap();
