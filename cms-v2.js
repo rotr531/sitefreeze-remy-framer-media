@@ -29,5 +29,6 @@ window.KIIN_CMS_RENDER=doc=>{if(doc.schemaVersion!==2)return;const s=doc.site,sl
  for(const [key,value]of Object.entries(values)){const attr=key.startsWith('og:')?'property':'name';let nodes=[...document.head.querySelectorAll('meta['+attr+'="'+key+'"]')];if(!nodes.length){const m=el('meta','',{[attr]:key});document.head.append(m);nodes=[m]}for(const m of nodes)if(m.content!==value)m.content=value}
  let canonical=document.head.querySelector('link[rel="canonical"]');if(!canonical){canonical=el('link','',{rel:'canonical'});document.head.append(canonical)}canonical.href=p?location.origin+'/work/'+p.slug+'/':s.seo.canonical||location.origin+'/';
  if(s.seo.favicon){let icon=document.head.querySelector('link[rel="icon"]');if(!icon){icon=el('link','',{rel:'icon'});document.head.append(icon)}icon.href=s.seo.favicon}
+ window.KIIN_MOBILE_RENDER?.(doc);
 };
 })();

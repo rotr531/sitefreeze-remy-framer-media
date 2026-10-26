@@ -1,0 +1,70 @@
+#kiin-mobile{display:none}
+@media(max-width:809.98px){
+ body.kiin-mobile-ready{overflow-x:hidden!important;background:#fff!important}
+ body.kiin-mobile-ready #main{display:none!important}
+ #kiin-mobile{display:block;max-width:100%;color:#111;background:#fff;font:15px/1.6 Inter,Arial,sans-serif;letter-spacing:-.025em;isolation:isolate}
+ #kiin-mobile *{box-sizing:border-box}
+ #kiin-mobile a{color:inherit;text-decoration:none;-webkit-tap-highlight-color:#e8e8e8}
+ #kiin-mobile button{font:inherit;color:inherit;cursor:pointer}
+ #kiin-mobile :focus-visible{outline:2px solid #111;outline-offset:4px}
+ #kiin-mobile h1,#kiin-mobile h2,#kiin-mobile h3,#kiin-mobile p,#kiin-mobile figure{margin:0}
+ #kiin-mobile .km-header{height:64px;padding:0 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #dedede}
+ #kiin-mobile .km-brand{font-size:22px;font-weight:800;letter-spacing:-.07em;min-height:44px;display:flex;align-items:center}
+ #kiin-mobile .km-menu-button{height:44px;min-width:76px;border:0;background:none;padding:0;font-size:13px;font-weight:600;text-align:right}
+ #kiin-mobile .km-menu{padding:8px 20px 20px;border-bottom:1px solid #ddd;background:#f5f5f3}
+ #kiin-mobile .km-menu[hidden]{display:none}
+ #kiin-mobile .km-menu>a{display:flex;min-height:48px;align-items:center;font-size:19px;font-weight:600;overflow-wrap:anywhere}
+ #kiin-mobile .km-socials{display:flex;gap:8px}
+ #kiin-mobile .km-social{display:inline-flex;width:44px;height:44px;align-items:center;justify-content:center}
+ #kiin-mobile .km-social svg{width:19px;height:19px;fill:currentColor}
+ #kiin-mobile .km-social[aria-disabled]{opacity:.38}
+ #kiin-mobile .km-hero{padding:30px 20px 28px}
+ #kiin-mobile .km-available{display:flex;align-items:center;gap:7px;font-size:11px;letter-spacing:.01em;color:#555;margin-bottom:18px}
+ #kiin-mobile .km-available:before{content:'';height:6px;width:6px;border-radius:50%;background:#69a72b}
+ #kiin-mobile .km-hero h1{font-weight:800;font-size:clamp(36px,9.6vw,70px);line-height:1.06;letter-spacing:-.065em;overflow-wrap:normal}
+ #kiin-mobile .km-role{font-size:17px;margin-top:14px;font-weight:500}
+ #kiin-mobile .km-meta{display:flex;flex-wrap:wrap;gap:4px 16px;color:#737373;font-size:11px;margin-top:8px;justify-content:space-between}
+ #kiin-mobile .km-projects{padding:16px 0 28px;border-top:1px solid #dedede}
+ #kiin-mobile .km-section-heading{padding:0 20px 16px;display:flex;justify-content:space-between;align-items:center}
+ #kiin-mobile .km-section-heading h2{font-size:12px;text-transform:uppercase;letter-spacing:.07em;font-weight:500}
+ #kiin-mobile .km-section-heading>span{font-size:11px;color:#777}
+ #kiin-mobile .km-track{display:flex;gap:12px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding:20px;padding:0 20px 12px;align-items:flex-end;scrollbar-width:thin;scrollbar-color:#b8b8b8 #f4f4f4;touch-action:pan-x pan-y}
+ #kiin-mobile .km-card{display:block;flex:0 0 76%;min-width:0;scroll-snap-align:start}
+ #kiin-mobile .km-card-image{height:240px;background:#f0f0ee;overflow:hidden;display:flex;align-items:center;justify-content:center}
+ #kiin-mobile .km-card:nth-child(even) .km-card-image{height:270px}
+ #kiin-mobile .km-card-image img{display:block;width:100%;height:100%;object-fit:contain!important;object-position:center!important}
+ #kiin-mobile .km-caption{background:#111;color:white;display:flex;gap:12px;justify-content:space-between;padding:10px 12px;font-size:12px;line-height:1.4;min-height:44px;align-items:center}
+ #kiin-mobile .km-caption>span:first-child{overflow-wrap:anywhere}
+ #kiin-mobile .km-caption>span:last-child{flex:none;font-size:11px;color:#bbb}
+ #kiin-mobile .km-about{padding:28px 20px 36px;border-top:1px solid #dedede;scroll-margin-top:16px}
+ #kiin-mobile .km-about-heading{display:flex;gap:14px;align-items:center;margin-bottom:20px}
+ #kiin-mobile .km-about-heading img{width:56px;height:56px;object-fit:cover;border-radius:50%}
+ #kiin-mobile .km-about-heading h2{font-size:12px;letter-spacing:.07em;text-transform:uppercase;font-weight:500}
+ #kiin-mobile .km-intro{font-size:22px;line-height:1.4;font-weight:500;letter-spacing:-.045em}
+ #kiin-mobile .km-bio{font-size:14px;color:#626262;margin-top:16px;line-height:1.75}
+ #kiin-mobile .km-lists{display:grid;grid-template-columns:1fr 1fr;gap:28px 20px;margin-top:30px}
+ #kiin-mobile .km-lists h3{font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;margin-bottom:10px;color:#777}
+ #kiin-mobile .km-lists ul{list-style:none;padding:0;margin:0;font-size:12px;line-height:1.9}
+ #kiin-mobile .km-lists li{overflow-wrap:anywhere}
+ #kiin-mobile .km-footer{border-top:1px solid #ddd;padding:28px 20px 16px}
+ #kiin-mobile .km-footer-contact{display:flex;align-items:center;min-height:44px;font-size:28px;letter-spacing:-.05em;font-weight:600}
+ #kiin-mobile .km-footer-bottom{margin-top:24px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+ #kiin-mobile .km-footer-bottom p{font-size:10px;color:#777}
+ #kiin-mobile .km-detail{padding:20px}
+ #kiin-mobile .km-back{min-height:44px;display:inline-flex;align-items:center;font-size:12px;color:#777}
+ #kiin-mobile .km-eyebrow{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#777;margin-top:22px}
+ #kiin-mobile .km-detail h1{font-size:clamp(30px,8vw,56px);line-height:1.12;letter-spacing:-.055em;font-weight:700;margin-top:10px;overflow-wrap:anywhere}
+ #kiin-mobile .km-summary{font-size:16px;color:#666;line-height:1.6;margin-top:18px}
+ #kiin-mobile .km-info{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
+ #kiin-mobile .km-info dt{font-size:10px;text-transform:uppercase;letter-spacing:.05em;color:#888}
+ #kiin-mobile .km-info dd{margin:4px 0 0;font-size:13px;overflow-wrap:anywhere}
+ #kiin-mobile .km-visit{display:inline-flex;min-height:44px;align-items:center;border-bottom:1px solid #111;font-size:13px;margin-bottom:24px}
+ #kiin-mobile .km-cover{margin:8px 0 24px}
+ #kiin-mobile .km-detail img{display:block;width:100%;height:auto;max-width:100%}
+ #kiin-mobile .km-body{font-size:15px;line-height:1.75;color:#555}
+ #kiin-mobile .km-body p{margin-bottom:20px;white-space:pre-wrap}
+ #kiin-mobile .km-body h2{font-size:23px;color:#111;margin:26px 0 12px}
+ #kiin-mobile figcaption{font-size:11px;color:#888;margin:8px 0 20px}
+ #kiin-mobile blockquote{border-left:2px solid #111;margin:20px 0;padding-left:16px}
+ @media(min-width:600px){#kiin-mobile .km-card{flex-basis:46%}#kiin-mobile .km-card-image{height:280px}#kiin-mobile .km-card:nth-child(even) .km-card-image{height:310px}#kiin-mobile .km-hero{padding-top:40px;padding-bottom:40px}}
+}
