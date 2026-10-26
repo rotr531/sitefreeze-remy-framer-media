@@ -1,5 +1,19 @@
-.ticker-item .framer-wddru1{aspect-ratio:var(--cms-image-ratio,3 / 2)!important;height:auto!important;background:#f3f3f0!important;overflow:hidden!important}.ticker-item img{object-fit:var(--cms-image-fit,contain)!important;object-position:center!important}.cms-card-label{position:absolute;left:8px;bottom:8px;right:8px;z-index:4;padding:7px 9px;background:rgba(255,255,255,.94);color:#111;font:500 11px/1.3 Inter,Arial,sans-serif;white-space:normal;pointer-events:none;border-radius:3px}.cms-project-body{font:inherit;color:inherit}.cms-project-body p{white-space:pre-wrap;line-height:1.65;margin:0 0 24px}.cms-project-body h2{font-size:clamp(24px,3vw,36px);margin:34px 0 18px}.cms-project-body blockquote{border-left:2px solid #111;margin:24px 0;padding:0 24px;font-size:1.25em}.cms-project-body img,.cms-project-gallery img{width:100%;height:auto;display:block;object-fit:contain}.cms-project-body figure,.cms-project-gallery figure{margin:0 0 24px}.cms-project-body figcaption,.cms-project-gallery figcaption{font:12px/1.5 Inter,Arial,sans-serif;color:#666;margin-top:8px}.cms-project-body video{width:100%}.cms-project-body iframe{width:100%;aspect-ratio:16/9;border:0}.cms-project-gallery{display:grid;gap:16px;grid-template-columns:1fr}.cms-project-gallery figure{margin:0}.cms-hidden{display:none!important}@media(min-width:900px){.cms-project-gallery.cms-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.ticker-item img{object-fit:cover!important;object-position:center!important}.cms-project-body{font:inherit;color:inherit}.cms-project-body p{white-space:pre-wrap;line-height:1.65;margin:0 0 24px}.cms-project-body h2{font-size:clamp(24px,3vw,36px);margin:34px 0 18px}.cms-project-body blockquote{border-left:2px solid #111;margin:24px 0;padding:0 24px;font-size:1.25em}.cms-project-body img,.cms-project-gallery img{width:100%;height:auto;display:block;object-fit:contain}.cms-project-body figure,.cms-project-gallery figure{margin:0 0 24px}.cms-project-body figcaption,.cms-project-gallery figcaption{font:12px/1.5 Inter,Arial,sans-serif;color:#666;margin-top:8px}.cms-project-body video{width:100%}.cms-project-body iframe{width:100%;aspect-ratio:16/9;border:0}.cms-project-gallery{display:grid;gap:16px;grid-template-columns:1fr}.cms-project-gallery figure{margin:0}.cms-hidden{display:none!important}@media(min-width:900px){.cms-project-gallery.cms-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
-.ticker-item p{opacity:0!important}.cms-project-gallery{width:100%}
+.cms-project-gallery{width:100%}
 
 .framer-16yx486 img{object-fit:contain!important;background:#fff}
+
+/* Native Remy captions are shown on hover on desktop and above images on phones. */
+.ticker-item:focus-within .framer-1uri52o{opacity:1!important}
+@media(min-width:810px){.ticker-item[data-v2clone] .framer-1uri52o{opacity:0;transition:opacity .2s}.ticker-item[data-v2clone]:hover .framer-1uri52o{opacity:1!important}}
+a[href*="framer.link/LFp4JP9"],.framer-vcaUb,#__framer-badge-container{display:none!important}
+.framer-rao0J .framer-1fxw09g{appearance:none;-webkit-appearance:none;border:0;background:transparent;color:inherit;padding:0;font:inherit}
+.framer-rao0J .framer-1fxw09g:focus-visible{outline:2px solid #111;outline-offset:2px}
+@media(max-width:809.98px){
+ .framer-wDpjd .framer-1xg56a2{height:auto!important;min-height:0!important;justify-content:flex-start!important;gap:0!important;padding:calc(var(--kiin-mobile-chrome,340px) + 16px) 0 0!important}
+ .framer-OdpSH .framer-14rl40b{padding:24px 12px 48px!important}
+ .framer-rao0J .framer-1t3fixh{height:auto!important;min-height:56px;padding:6px 12px!important}
+ .framer-rao0J .framer-1fxw09g{height:44px!important;width:44px!important;min-width:44px!important;flex:none!important;touch-action:manipulation}
+ .framer-j6xo83{-webkit-mask-image:linear-gradient(to right,transparent,#000 14px,#000 calc(100% - 14px),transparent);mask-image:linear-gradient(to right,transparent,#000 14px,#000 calc(100% - 14px),transparent)}
+}

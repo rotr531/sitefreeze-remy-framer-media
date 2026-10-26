@@ -1,4 +1,6 @@
 (async()=>{
+ if('serviceWorker' in navigator)navigator.serviceWorker.getRegistrations().then(registrations=>Promise.all(registrations.filter(reg=>new URL(reg.scope).origin===location.origin).map(reg=>reg.unregister()))).catch(()=>{});
+
  const key=location.pathname.replace(/index\.html$/,'').replace(/\/$/,'')+'/',preview=new URLSearchParams(location.search).has('cms-preview');
  let data;try{const r=await fetch('/api/cms/'+(preview?'draft':'public'),{cache:'no-store'});if(!r.ok)throw Error();data=await r.json()}catch{return}
  const aliases=await (await fetch('/cms-aliases.json')).json(); const page=data.pages[key]||data.pages['/'],fields=Object.entries(page.fields),textMap=new Map(fields.filter(([,f])=>f.type==='text').map(([id,f])=>[f.original,{id,...f}]));
@@ -19,9 +21,9 @@
 
   for(const a of document.querySelectorAll('a'))if(['Remix for Free','Similar Templates'].includes(a.textContent.trim()))a.style.setProperty('display','none','important');
   for(const e of document.querySelectorAll('p,span,div'))if(e.children.length===0&&['Designed in','By','Thaer'].includes(e.textContent.trim())){let p=e.parentElement;while(p&&p.textContent.length<90&&!p.textContent.includes('©')&&p!==document.body){if(p.textContent.includes('Designed in')&&p.textContent.includes('Thaer')){p.style.setProperty('display','none','important');break}p=p.parentElement}}
-  const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentElement?.closest('script,style,svg,[data-cms-extra]')?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});let n;
+  const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentElement?.closest('script,style,svg,[data-cms-extra],.framer-1pyigoo')?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});let n;
   while(n=w.nextNode()){const original=origins.get(n)||n.nodeValue.trim(),f=textField(original);if(f){origins.set(n,original);if(n.nodeValue.trim()!==f.value)n.nodeValue=f.value}}
-  for(const e of document.querySelectorAll('[data-cms-text]')){const f=page.fields[e.dataset.cmsText];if(f&&e.textContent!==f.value)e.textContent=f.value}
+  for(const e of document.querySelectorAll('[data-cms-text]')){if(e.closest('.framer-1pyigoo'))continue;const f=page.fields[e.dataset.cmsText];if(f&&e.textContent!==f.value)e.textContent=f.value}
   for(const e of document.querySelectorAll('img,a')){
    if(data.schemaVersion===2&&e.tagName==='IMG')continue;
    const type=e.tagName==='IMG'?'image':'link',attr=type==='image'?'src':'href',value=origins.get(e)||e.getAttribute(attr);if(!value)continue;origins.set(e,value);
