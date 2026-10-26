@@ -1,1 +1,608 @@
-{"schemaVersion": 2, "site": {"brand": "KIIN", "heroTitle": "HELLO KIIN", "intro": "I’m Trung Kien Nguyen, a Manual QA Tester based in Ho Chi Minh City, Vietnam, currently working at 1Creators.", "bio": "I test websites, mobile apps, admin systems, and AI chatbots, focusing on functionality, usability, and AI response quality. I work with developers and product teams to identify bugs, verify fixes, and support reliable releases.", "role": "Manual & AI QA Tester", "location": "Ho Chi Minh City, Vietnam", "email": "hello@kiin.ai", "ctaLabel": "Contact Me", "ctaUrl": "mailto:hello@kiin.ai", "available": true, "availabilityLabel": "Available for work", "portrait": "https://framerusercontent.com/images/3kh27uqtqhub5ai1xO9Og2JFv0.jpg?width=736&height=736", "copyright": "© 2026 KIIN. All rights reserved.", "socials": [{"label": "X", "url": "https://x.com/", "enabled": true}, {"label": "Instagram", "url": "https://www.instagram.com/", "enabled": true}, {"label": "LinkedIn", "url": "https://www.linkedin.com/", "enabled": true}], "lists": [{"title": "Testing Expertise", "items": ["Functional Testing", "UI/UX Validation", "AI Chatbot Testing", "Admin System Testing", "Web & Mobile Testing"]}, {"title": "Projects", "items": ["Yeah1 Group", "1Creators Platform", "SYE Holdings", "MangoPlus", "UIT AI Chatbot", "Every Half AI Chatbot"]}, {"title": "Testing Process", "items": ["Requirement Analysis", "Test Case Design", "Testing & Bug Reporting", "Bug Reproduction", "Regression Testing", "Release Support"]}], "sections": {"hero": true, "projects": true, "about": true}, "navigation": {"home": "KIIN", "about": "Info", "index": "Index"}, "imageFit": "contain", "imageRatio": "3 / 2", "seo": {"title": "KIIN — Manual & AI QA Tester", "description": "Portfolio of Trung Kien Nguyen — Manual & AI QA Tester in Ho Chi Minh City, Vietnam.", "image": "https://framerusercontent.com/images/tBUrMdh33fEYS1TkOF9KUiws9c.png?width=1200&height=825", "favicon": "", "canonical": "", "indexable": true}, "portraitAlt": "KIIN — ảnh đại diện"}, "projects": [{"id": "kien-pham", "slug": "kien-pham", "title": "Kien Pham / KIDEN", "category": "Portfolio Website", "year": "", "status": "published", "featured": true, "client": "Kien Pham / KIDEN", "scope": "", "role": "", "duration": "", "summary": "Personal portfolio bringing together product design, music, selected work, and creative explorations.", "overview": "A personal space for Kien Pham / KIDEN, presenting his product design work, music, career background, highlights, and articles. The website connects his identities as a product designer and music artist in one portfolio.", "cover": "/cms-media/4c656901-55d7-4e6e-ba6a-8cdf92c401cc", "coverAlt": "Kien Pham / KIDEN — website homepage", "gallery": [{"id": "kien-pham-home", "url": "/cms-media/4c656901-55d7-4e6e-ba6a-8cdf92c401cc", "alt": "Kien Pham / KIDEN homepage", "caption": "Homepage — kienpham.space"}], "blocks": [], "liveUrl": "https://www.kienpham.space/", "source": "https://www.kienpham.space/", "seo": {"title": "Kien Pham / KIDEN — KIIN", "description": "Personal portfolio bringing together product design, music, selected work, and creative explorations.", "image": "/cms-media/4c656901-55d7-4e6e-ba6a-8cdf92c401cc"}, "redirects": []}, {"id": "morrow", "slug": "morrow", "title": "Yeah1 Group", "category": "Website QA Testing", "year": "2026", "status": "published", "featured": true, "client": "Yeah1 Group", "scope": "Website QA Testing", "role": "QA Tester", "duration": "", "summary": "Website QA Testing — Yeah1 Group.", "overview": "Website QA Testing — Yeah1 Group.", "cover": "https://framerusercontent.com/images/tBUrMdh33fEYS1TkOF9KUiws9c.png?width=1200&height=825", "coverAlt": "Yeah1 Group", "gallery": [{"id": "0f592a04fb9f", "url": "https://framerusercontent.com/images/tBUrMdh33fEYS1TkOF9KUiws9c.png?width=1200&height=825", "alt": "Yeah1 Group — 1", "caption": ""}], "blocks": [], "liveUrl": "", "source": "https://kiin-portfolio.website/work/yeah1-group-webiste#work-section", "seo": {"title": "Yeah1 Group — KIIN", "description": "Website QA Testing — Yeah1 Group.", "image": "https://framerusercontent.com/images/tBUrMdh33fEYS1TkOF9KUiws9c.png?width=1200&height=825"}, "redirects": []}, {"id": "northbeam", "slug": "northbeam", "title": "1Creators Platform", "category": "Web & Mobile App Testing", "year": "2024", "status": "published", "featured": true, "client": "1Creators Platform", "scope": "Web & Mobile App Testing", "role": "QA Tester", "duration": "", "summary": "Tested the internal website and mobile application, including content, livestream, messaging, voting, ticket purchasing and cross-device compatibility.", "overview": "Tested the internal website and mobile application, including content, livestream, messaging, voting, ticket purchasing and cross-device compatibility.", "cover": "https://framerusercontent.com/images/8uBrJUItKnk2lu9o9eBzALhIY.png?width=1586&height=992", "coverAlt": "1Creators Platform", "gallery": [{"id": "d1f1e22c38fa", "url": "https://framerusercontent.com/images/8uBrJUItKnk2lu9o9eBzALhIY.png?width=1586&height=992", "alt": "1Creators Platform — 1", "caption": ""}, {"id": "17826dbcaaed", "url": "https://framerusercontent.com/images/J0VwtYHHXMhL1FV3jH8iWEtAVk.webp?width=1600&height=1200", "alt": "1Creators Platform — 2", "caption": ""}, {"id": "51aae35e2692", "url": "https://framerusercontent.com/images/8UEzK68Cuo7xH5PuKC44uAV0ckY.webp?width=1600&height=1200", "alt": "1Creators Platform — 3", "caption": ""}, {"id": "1f7f91ce12e8", "url": "https://framerusercontent.com/images/Ks48TT9awwpT9gdcWgZd8ev1WY.webp?width=1600&height=1200", "alt": "1Creators Platform — 4", "caption": ""}], "blocks": [], "liveUrl": "", "source": "https://kiin-portfolio.website/work/kavi#work-section", "seo": {"title": "1Creators Platform — KIIN", "description": "Tested the internal website and mobile application, including content, livestream, messaging, voting, ticket purchasing and cross-device compatibility.", "image": "https://framerusercontent.com/images/8uBrJUItKnk2lu9o9eBzALhIY.png?width=1586&height=992"}, "redirects": []}, {"id": "hana", "slug": "hana", "title": "SYE Holdings", "category": "Website & Admin Testing", "year": "2025", "status": "published", "featured": true, "client": "SYE Holdings", "scope": "Website & Admin Testing", "role": "QA Tester", "duration": "", "summary": "Tested the public website and internal admin system, including content workflows, permissions, data synchronization and responsive UI.", "overview": "Tested the public website and internal admin system, including content workflows, permissions, data synchronization and responsive UI.", "cover": "https://framerusercontent.com/images/Mx2RAhokexM2LaoyUQJl2dWMp9k.png?width=1568&height=1003", "coverAlt": "SYE Holdings", "gallery": [{"id": "85a0cc321434", "url": "https://framerusercontent.com/images/Mx2RAhokexM2LaoyUQJl2dWMp9k.png?width=1568&height=1003", "alt": "SYE Holdings — 1", "caption": ""}, {"id": "e12b11eabcb7", "url": "https://framerusercontent.com/images/1C3zqERGdc7pqPIbDxtBaD4VGiQ.png?width=4096&height=2824", "alt": "SYE Holdings — 2", "caption": ""}, {"id": "480c0a6d112f", "url": "https://framerusercontent.com/images/IcofJeLDPLjFQdtspoWzl60.png?width=4800&height=2520", "alt": "SYE Holdings — 3", "caption": ""}], "blocks": [], "liveUrl": "", "source": "https://kiin-portfolio.website/work/postwing#work-section", "seo": {"title": "SYE Holdings — KIIN", "description": "Tested the public website and internal admin system, including content workflows, permissions, data synchronization and responsive UI.", "image": "https://framerusercontent.com/images/Mx2RAhokexM2LaoyUQJl2dWMp9k.png?width=1568&height=1003"}, "redirects": []}, {"id": "orbit", "slug": "orbit", "title": "MangoPlus", "category": "Web & Mobile App QA Testing", "year": "2026", "status": "published", "featured": true, "client": "MangoPlus", "scope": "Web & Mobile App QA Testing", "role": "QA Tester", "duration": "", "summary": "Web & Mobile App QA Testing — MangoPlus.", "overview": "Web & Mobile App QA Testing — MangoPlus.", "cover": "https://framerusercontent.com/images/TPOTFYjFLCDbwjehXfRR9SCnZ94.png?width=1200&height=825", "coverAlt": "MangoPlus", "gallery": [{"id": "236306655843", "url": "https://framerusercontent.com/images/TPOTFYjFLCDbwjehXfRR9SCnZ94.png?width=1200&height=825", "alt": "MangoPlus — 1", "caption": ""}], "blocks": [], "liveUrl": "", "source": "https://kiin-portfolio.website/work/mango-plus#work-section", "seo": {"title": "MangoPlus — KIIN", "description": "Web & Mobile App QA Testing — MangoPlus.", "image": "https://framerusercontent.com/images/TPOTFYjFLCDbwjehXfRR9SCnZ94.png?width=1200&height=825"}, "redirects": []}, {"id": "field", "slug": "field", "title": "UIT AI Chatbot", "category": "AI Chatbot Testing", "year": "2025", "status": "published", "featured": false, "client": "UIT AI Chatbot", "scope": "AI Chatbot Testing", "role": "QA Tester", "duration": "", "summary": "Tested UIT’s AI consultation chatbot, focusing on response accuracy, conversation flows, UI behavior and out-of-scope question handling.", "overview": "Tested UIT’s AI consultation chatbot, focusing on response accuracy, conversation flows, UI behavior and out-of-scope question handling.", "cover": "https://framerusercontent.com/images/QmJO0sNC9FYzW7mU46EjCsoh9g.png?width=1536&height=1024", "coverAlt": "UIT AI Chatbot", "gallery": [{"id": "165d1465982b", "url": "https://framerusercontent.com/images/QmJO0sNC9FYzW7mU46EjCsoh9g.png?width=1536&height=1024", "alt": "UIT AI Chatbot — 1", "caption": ""}, {"id": "32f116f80f14", "url": "https://framerusercontent.com/images/173P7WbvHMc1Z9lNpSNy6GIYif8.png?width=1066&height=800", "alt": "UIT AI Chatbot — 2", "caption": ""}, {"id": "ce443cbc78c4", "url": "https://framerusercontent.com/images/UmXfpYfVhYqoqb1DnbFpIC98OIo.png?width=1066&height=800", "alt": "UIT AI Chatbot — 3", "caption": ""}, {"id": "271f229f788d", "url": "https://framerusercontent.com/images/rRp1KaDwStpJ6Pxo05Doj1IjSU.png?width=1066&height=800", "alt": "UIT AI Chatbot — 4", "caption": ""}], "blocks": [], "liveUrl": "", "source": "https://kiin-portfolio.website/work/damas#work-section", "seo": {"title": "UIT AI Chatbot — KIIN", "description": "Tested UIT’s AI consultation chatbot, focusing on response accuracy, conversation flows, UI behavior and out-of-scope question handling.", "image": "https://framerusercontent.com/images/QmJO0sNC9FYzW7mU46EjCsoh9g.png?width=1536&height=1024"}, "redirects": []}, {"id": "noveq", "slug": "noveq", "title": "Every Half AI Chatbot", "category": "E-commerce Chatbot Testing", "year": "2024", "status": "published", "featured": false, "client": "Every Half AI Chatbot", "scope": "E-commerce Chatbot Testing", "role": "QA Tester", "duration": "", "summary": "Tested an AI customer-support chatbot covering coffee products, pricing, store locations, purchasing policies and contextual understanding.", "overview": "Tested an AI customer-support chatbot covering coffee products, pricing, store locations, purchasing policies and contextual understanding.", "cover": "https://framerusercontent.com/images/SEayEoNLuqcgNy2Uz3dkwpOTYs.png?width=1586&height=992", "coverAlt": "Every Half AI Chatbot", "gallery": [{"id": "603cd53744ef", "url": "https://framerusercontent.com/images/SEayEoNLuqcgNy2Uz3dkwpOTYs.png?width=1586&height=992", "alt": "Every Half AI Chatbot — 1", "caption": ""}, {"id": "dd93a6c1fc47", "url": "https://framerusercontent.com/images/ujTNOAyihWs0g4ns3ZEmKQBW6M.jpeg?width=1400&height=950", "alt": "Every Half AI Chatbot — 2", "caption": ""}, {"id": "acfdf92bc4cf", "url": "https://framerusercontent.com/images/v1SmiICbdgfuSlTYmhS054D8sI.jpeg?width=1400&height=950", "alt": "Every Half AI Chatbot — 3", "caption": ""}, {"id": "5770d4244e4c", "url": "https://framerusercontent.com/images/ixj3l3ntKSbk66sf6KZmqHxXWi0.jpeg?width=1400&height=950", "alt": "Every Half AI Chatbot — 4", "caption": ""}], "blocks": [], "liveUrl": "", "source": "https://kiin-portfolio.website/work/najm#work-section", "seo": {"title": "Every Half AI Chatbot — KIIN", "description": "Tested an AI customer-support chatbot covering coffee products, pricing, store locations, purchasing policies and contextual understanding.", "image": "https://framerusercontent.com/images/SEayEoNLuqcgNy2Uz3dkwpOTYs.png?width=1586&height=992"}, "redirects": []}, {"id": "luma", "slug": "luma", "title": "Phan Kim Design", "category": "Website Design, Development & QA", "year": "2026", "status": "published", "featured": false, "client": "Phan Kim Design", "scope": "Website Design, Development & QA", "role": "QA Tester", "duration": "", "summary": "Website Design, Development & QA — Phan Kim Design.", "overview": "Website Design, Development & QA — Phan Kim Design.", "cover": "https://framerusercontent.com/images/X08h7ztCyniTNVNY8OoESaAog.png?width=1200&height=825", "coverAlt": "Phan Kim Design", "gallery": [{"id": "2513b09bdba3", "url": "https://framerusercontent.com/images/X08h7ztCyniTNVNY8OoESaAog.png?width=1200&height=825", "alt": "Phan Kim Design — 1", "caption": ""}], "blocks": [], "liveUrl": "", "source": "https://kiin-portfolio.website/work/phan-kim-design#work-section", "seo": {"title": "Phan Kim Design — KIIN", "description": "Website Design, Development & QA — Phan Kim Design.", "image": "https://framerusercontent.com/images/X08h7ztCyniTNVNY8OoESaAog.png?width=1200&height=825"}, "redirects": []}, {"id": "relay", "slug": "relay", "title": "Bích Thủy Portfolio", "category": "Website Design, Development & QA", "year": "2026", "status": "published", "featured": false, "client": "Bích Thủy Portfolio", "scope": "Website Design, Development & QA", "role": "QA Tester", "duration": "", "summary": "Website Design, Development & QA — Bích Thủy Portfolio.", "overview": "Website Design, Development & QA — Bích Thủy Portfolio.", "cover": "https://framerusercontent.com/images/PTZ2PZG1uDniHdseCBkvMSMjwA.png?width=1200&height=825", "coverAlt": "Bích Thủy Portfolio", "gallery": [{"id": "06abc7dd8235", "url": "https://framerusercontent.com/images/PTZ2PZG1uDniHdseCBkvMSMjwA.png?width=1200&height=825", "alt": "Bích Thủy Portfolio — 1", "caption": ""}], "blocks": [], "liveUrl": "", "source": "https://kiin-portfolio.website/work/bích-thủy-portfolio#work-section", "seo": {"title": "Bích Thủy Portfolio — KIIN", "description": "Website Design, Development & QA — Bích Thủy Portfolio.", "image": "https://framerusercontent.com/images/PTZ2PZG1uDniHdseCBkvMSMjwA.png?width=1200&height=825"}, "redirects": []}, {"id": "tung-lam", "slug": "tung-lam", "title": "Đỗ Minh Tùng Lâm Port Polio", "category": "Website Design, Development & QA", "year": "2026", "status": "published", "featured": false, "client": "Đỗ Minh Tùng Lâm Port Polio", "scope": "Website Design, Development & QA", "role": "QA Tester", "duration": "", "summary": "Website Design, Development & QA — Đỗ Minh Tùng Lâm Port Polio.", "overview": "Website Design, Development & QA — Đỗ Minh Tùng Lâm Port Polio.", "cover": "https://framerusercontent.com/images/FP2sRNpvUWBKde0xmbiAtEImFRA.png?width=1200&height=825", "coverAlt": "Đỗ Minh Tùng Lâm Port Polio", "gallery": [{"id": "07f0e2f06c07", "url": "https://framerusercontent.com/images/FP2sRNpvUWBKde0xmbiAtEImFRA.png?width=1200&height=825", "alt": "Đỗ Minh Tùng Lâm Port Polio — 1", "caption": ""}], "blocks": [], "liveUrl": "", "source": "https://kiin-portfolio.website/work/đỗ-minh-tùng-lâm-port-polio#work-section", "seo": {"title": "Đỗ Minh Tùng Lâm Port Polio — KIIN", "description": "Website Design, Development & QA — Đỗ Minh Tùng Lâm Port Polio.", "image": "https://framerusercontent.com/images/FP2sRNpvUWBKde0xmbiAtEImFRA.png?width=1200&height=825"}, "redirects": []}, {"id": "hong-tra", "slug": "hong-tra", "title": "Hồng Trà Hòa Bình", "category": "Website Design, Development & QA", "year": "2026", "status": "published", "featured": false, "client": "Hồng Trà Hòa Bình", "scope": "Website Design, Development & QA", "role": "QA Tester", "duration": "", "summary": "Website Design, Development & QA — Hồng Trà Hòa Bình.", "overview": "Website Design, Development & QA — Hồng Trà Hòa Bình.", "cover": "https://framerusercontent.com/images/1jZIMTn246q5r0UdFssi9uZKdQ.png?width=1200&height=825", "coverAlt": "Hồng Trà Hòa Bình", "gallery": [{"id": "aba5b62abac8", "url": "https://framerusercontent.com/images/1jZIMTn246q5r0UdFssi9uZKdQ.png?width=1200&height=825", "alt": "Hồng Trà Hòa Bình — 1", "caption": ""}], "blocks": [], "liveUrl": "", "source": "https://kiin-portfolio.website/work/hồng-trà-hòa-bình#work-section", "seo": {"title": "Hồng Trà Hòa Bình — KIIN", "description": "Website Design, Development & QA — Hồng Trà Hòa Bình.", "image": "https://framerusercontent.com/images/1jZIMTn246q5r0UdFssi9uZKdQ.png?width=1200&height=825"}, "redirects": []}, {"id": "la-yen", "slug": "la-yen", "title": "Là Yên Retreat", "category": "E-commerce Website QA Testing", "year": "2026", "status": "published", "featured": false, "client": "Là Yên Retreat", "scope": "E-commerce Website QA Testing", "role": "QA Tester", "duration": "", "summary": "E-commerce Website QA Testing — Là Yên Retreat.", "overview": "E-commerce Website QA Testing — Là Yên Retreat.", "cover": "https://framerusercontent.com/images/QH7ov3tr7ZZ4601dcKUfLoHAg1o.png?width=1200&height=825", "coverAlt": "Là Yên Retreat", "gallery": [{"id": "5b0df6d4d800", "url": "https://framerusercontent.com/images/QH7ov3tr7ZZ4601dcKUfLoHAg1o.png?width=1200&height=825", "alt": "Là Yên Retreat — 1", "caption": ""}], "blocks": [], "liveUrl": "", "source": "https://kiin-portfolio.website/work/là-yên-retreat#work-section", "seo": {"title": "Là Yên Retreat — KIIN", "description": "E-commerce Website QA Testing — Là Yên Retreat.", "image": "https://framerusercontent.com/images/QH7ov3tr7ZZ4601dcKUfLoHAg1o.png?width=1200&height=825"}, "redirects": []}, {"id": "thanh-xuan", "slug": "thanh-xuan", "title": "Nhà của Thời Thanh Xuân", "category": "E-commerce Website QA Testing", "year": "2026", "status": "published", "featured": false, "client": "Nhà của Thời Thanh Xuân", "scope": "E-commerce Website QA Testing", "role": "QA Tester", "duration": "", "summary": "E-commerce Website QA Testing — Nhà của Thời Thanh Xuân.", "overview": "E-commerce Website QA Testing — Nhà của Thời Thanh Xuân.", "cover": "https://framerusercontent.com/images/X56V4Gf8G41jrAVdWYzarAaYU.png?width=1200&height=825", "coverAlt": "Nhà của Thời Thanh Xuân", "gallery": [{"id": "cfd14df7314c", "url": "https://framerusercontent.com/images/X56V4Gf8G41jrAVdWYzarAaYU.png?width=1200&height=825", "alt": "Nhà của Thời Thanh Xuân — 1", "caption": ""}], "blocks": [], "liveUrl": "", "source": "https://kiin-portfolio.website/work/nhà-của-thời-thanh-xuân#work-section", "seo": {"title": "Nhà của Thời Thanh Xuân — KIIN", "description": "E-commerce Website QA Testing — Nhà của Thời Thanh Xuân.", "image": "https://framerusercontent.com/images/X56V4Gf8G41jrAVdWYzarAaYU.png?width=1200&height=825"}, "redirects": []}]}
+{
+  "schemaVersion": 2,
+  "site": {
+    "brand": "KIIN",
+    "heroTitle": "HELLO KIIN",
+    "intro": "I’m Trung Kien Nguyen, a Manual QA Tester based in Ho Chi Minh City, Vietnam, currently working at 1Creators.",
+    "bio": "I test websites, mobile apps, admin systems, and AI chatbots, focusing on functionality, usability, and AI response quality. I work with developers and product teams to identify bugs, verify fixes, and support reliable releases.",
+    "role": "Manual & AI QA Tester",
+    "location": "Ho Chi Minh City, Vietnam",
+    "email": "hello@kiin.ai",
+    "ctaLabel": "Contact Me",
+    "ctaUrl": "mailto:hello@kiin.ai",
+    "available": true,
+    "availabilityLabel": "Available for work",
+    "portrait": "https://framerusercontent.com/images/3kh27uqtqhub5ai1xO9Og2JFv0.jpg?width=736&height=736",
+    "copyright": "© 2026 KIIN. All rights reserved.",
+    "socials": [
+      {
+        "label": "X",
+        "url": "https://x.com/",
+        "enabled": true
+      },
+      {
+        "label": "Instagram",
+        "url": "https://www.instagram.com/",
+        "enabled": true
+      },
+      {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/",
+        "enabled": true
+      }
+    ],
+    "lists": [
+      {
+        "title": "Testing Expertise",
+        "items": [
+          "Functional Testing",
+          "UI/UX Validation",
+          "AI Chatbot Testing",
+          "Admin System Testing",
+          "Web & Mobile Testing"
+        ]
+      },
+      {
+        "title": "Projects",
+        "items": [
+          "Yeah1 Group",
+          "1Creators Platform",
+          "SYE Holdings",
+          "MangoPlus",
+          "UIT AI Chatbot",
+          "Every Half AI Chatbot"
+        ]
+      },
+      {
+        "title": "Testing Process",
+        "items": [
+          "Requirement Analysis",
+          "Test Case Design",
+          "Testing & Bug Reporting",
+          "Bug Reproduction",
+          "Regression Testing",
+          "Release Support"
+        ]
+      }
+    ],
+    "sections": {
+      "hero": true,
+      "projects": true,
+      "about": true
+    },
+    "navigation": {
+      "home": "KIIN",
+      "about": "Info",
+      "index": "Index"
+    },
+    "imageFit": "contain",
+    "imageRatio": "3 / 2",
+    "seo": {
+      "title": "KIIN — Manual & AI QA Tester",
+      "description": "Portfolio of Trung Kien Nguyen — Manual & AI QA Tester in Ho Chi Minh City, Vietnam.",
+      "image": "https://framerusercontent.com/images/tBUrMdh33fEYS1TkOF9KUiws9c.png?width=1200&height=825",
+      "favicon": "",
+      "canonical": "",
+      "indexable": true
+    },
+    "portraitAlt": "KIIN — ảnh đại diện"
+  },
+  "projects": [
+    {
+      "id": "kien-pham",
+      "slug": "kien-pham",
+      "title": "Kien Pham / KIDEN",
+      "category": "Portfolio Website",
+      "year": "",
+      "status": "published",
+      "featured": true,
+      "client": "Kien Pham / KIDEN",
+      "scope": "",
+      "role": "",
+      "duration": "",
+      "summary": "Personal portfolio bringing together product design, music, selected work, and creative explorations.",
+      "overview": "A personal space for Kien Pham / KIDEN, presenting his product design work, music, career background, highlights, and articles. The website connects his identities as a product designer and music artist in one portfolio.",
+      "cover": "/cms-media/4c656901-55d7-4e6e-ba6a-8cdf92c401cc",
+      "coverAlt": "Kien Pham / KIDEN — website homepage",
+      "gallery": [
+        {
+          "id": "kien-pham-home",
+          "url": "/cms-media/4c656901-55d7-4e6e-ba6a-8cdf92c401cc",
+          "alt": "Kien Pham / KIDEN homepage",
+          "caption": "Homepage — kienpham.space"
+        }
+      ],
+      "blocks": [],
+      "liveUrl": "https://www.kienpham.space/",
+      "source": "https://www.kienpham.space/",
+      "seo": {
+        "title": "Kien Pham / KIDEN — KIIN",
+        "description": "Personal portfolio bringing together product design, music, selected work, and creative explorations.",
+        "image": "/cms-media/4c656901-55d7-4e6e-ba6a-8cdf92c401cc"
+      },
+      "redirects": []
+    },
+    {
+      "id": "morrow",
+      "slug": "morrow",
+      "title": "Yeah1 Group",
+      "category": "Website QA Testing",
+      "year": "2026",
+      "status": "published",
+      "featured": true,
+      "client": "Yeah1 Group",
+      "scope": "Website QA Testing",
+      "role": "QA Tester",
+      "duration": "",
+      "summary": "Website QA Testing — Yeah1 Group.",
+      "overview": "Website QA Testing — Yeah1 Group.",
+      "cover": "/assets/project-covers/morrow-full.webp",
+      "coverAlt": "Yeah1 Group",
+      "gallery": [
+        {
+          "id": "0f592a04fb9f",
+          "url": "https://framerusercontent.com/images/tBUrMdh33fEYS1TkOF9KUiws9c.png?width=1200&height=825",
+          "alt": "Yeah1 Group — 1",
+          "caption": ""
+        }
+      ],
+      "blocks": [],
+      "liveUrl": "",
+      "source": "https://kiin-portfolio.website/work/yeah1-group-webiste#work-section",
+      "seo": {
+        "title": "Yeah1 Group — KIIN",
+        "description": "Website QA Testing — Yeah1 Group.",
+        "image": "https://framerusercontent.com/images/tBUrMdh33fEYS1TkOF9KUiws9c.png?width=1200&height=825"
+      },
+      "redirects": [],
+      "thumbnail": "/assets/project-covers/morrow-900x1200.webp"
+    },
+    {
+      "id": "northbeam",
+      "slug": "northbeam",
+      "title": "1Creators Platform",
+      "category": "Web & Mobile App Testing",
+      "year": "2024",
+      "status": "published",
+      "featured": true,
+      "client": "1Creators Platform",
+      "scope": "Web & Mobile App Testing",
+      "role": "QA Tester",
+      "duration": "",
+      "summary": "Tested the internal website and mobile application, including content, livestream, messaging, voting, ticket purchasing and cross-device compatibility.",
+      "overview": "Tested the internal website and mobile application, including content, livestream, messaging, voting, ticket purchasing and cross-device compatibility.",
+      "cover": "/assets/project-covers/northbeam-full.webp",
+      "coverAlt": "1Creators Platform",
+      "gallery": [
+        {
+          "id": "d1f1e22c38fa",
+          "url": "https://framerusercontent.com/images/8uBrJUItKnk2lu9o9eBzALhIY.png?width=1586&height=992",
+          "alt": "1Creators Platform — 1",
+          "caption": ""
+        },
+        {
+          "id": "17826dbcaaed",
+          "url": "https://framerusercontent.com/images/J0VwtYHHXMhL1FV3jH8iWEtAVk.webp?width=1600&height=1200",
+          "alt": "1Creators Platform — 2",
+          "caption": ""
+        },
+        {
+          "id": "51aae35e2692",
+          "url": "https://framerusercontent.com/images/8UEzK68Cuo7xH5PuKC44uAV0ckY.webp?width=1600&height=1200",
+          "alt": "1Creators Platform — 3",
+          "caption": ""
+        },
+        {
+          "id": "1f7f91ce12e8",
+          "url": "https://framerusercontent.com/images/Ks48TT9awwpT9gdcWgZd8ev1WY.webp?width=1600&height=1200",
+          "alt": "1Creators Platform — 4",
+          "caption": ""
+        }
+      ],
+      "blocks": [],
+      "liveUrl": "",
+      "source": "https://kiin-portfolio.website/work/kavi#work-section",
+      "seo": {
+        "title": "1Creators Platform — KIIN",
+        "description": "Tested the internal website and mobile application, including content, livestream, messaging, voting, ticket purchasing and cross-device compatibility.",
+        "image": "https://framerusercontent.com/images/8uBrJUItKnk2lu9o9eBzALhIY.png?width=1586&height=992"
+      },
+      "redirects": [],
+      "thumbnail": "/assets/project-covers/northbeam-900x1200.webp"
+    },
+    {
+      "id": "hana",
+      "slug": "hana",
+      "title": "SYE Holdings",
+      "category": "Website & Admin Testing",
+      "year": "2025",
+      "status": "published",
+      "featured": true,
+      "client": "SYE Holdings",
+      "scope": "Website & Admin Testing",
+      "role": "QA Tester",
+      "duration": "",
+      "summary": "Tested the public website and internal admin system, including content workflows, permissions, data synchronization and responsive UI.",
+      "overview": "Tested the public website and internal admin system, including content workflows, permissions, data synchronization and responsive UI.",
+      "cover": "/assets/project-covers/hana-full.webp",
+      "coverAlt": "SYE Holdings",
+      "gallery": [
+        {
+          "id": "85a0cc321434",
+          "url": "https://framerusercontent.com/images/Mx2RAhokexM2LaoyUQJl2dWMp9k.png?width=1568&height=1003",
+          "alt": "SYE Holdings — 1",
+          "caption": ""
+        },
+        {
+          "id": "e12b11eabcb7",
+          "url": "https://framerusercontent.com/images/1C3zqERGdc7pqPIbDxtBaD4VGiQ.png?width=4096&height=2824",
+          "alt": "SYE Holdings — 2",
+          "caption": ""
+        },
+        {
+          "id": "480c0a6d112f",
+          "url": "https://framerusercontent.com/images/IcofJeLDPLjFQdtspoWzl60.png?width=4800&height=2520",
+          "alt": "SYE Holdings — 3",
+          "caption": ""
+        }
+      ],
+      "blocks": [],
+      "liveUrl": "",
+      "source": "https://kiin-portfolio.website/work/postwing#work-section",
+      "seo": {
+        "title": "SYE Holdings — KIIN",
+        "description": "Tested the public website and internal admin system, including content workflows, permissions, data synchronization and responsive UI.",
+        "image": "https://framerusercontent.com/images/Mx2RAhokexM2LaoyUQJl2dWMp9k.png?width=1568&height=1003"
+      },
+      "redirects": [],
+      "thumbnail": "/assets/project-covers/hana-900x1200.webp"
+    },
+    {
+      "id": "orbit",
+      "slug": "orbit",
+      "title": "MangoPlus",
+      "category": "Web & Mobile App QA Testing",
+      "year": "2026",
+      "status": "published",
+      "featured": true,
+      "client": "MangoPlus",
+      "scope": "Web & Mobile App QA Testing",
+      "role": "QA Tester",
+      "duration": "",
+      "summary": "Web & Mobile App QA Testing — MangoPlus.",
+      "overview": "Web & Mobile App QA Testing — MangoPlus.",
+      "cover": "/assets/project-covers/orbit-full.webp",
+      "coverAlt": "MangoPlus",
+      "gallery": [
+        {
+          "id": "236306655843",
+          "url": "https://framerusercontent.com/images/TPOTFYjFLCDbwjehXfRR9SCnZ94.png?width=1200&height=825",
+          "alt": "MangoPlus — 1",
+          "caption": ""
+        }
+      ],
+      "blocks": [],
+      "liveUrl": "",
+      "source": "https://kiin-portfolio.website/work/mango-plus#work-section",
+      "seo": {
+        "title": "MangoPlus — KIIN",
+        "description": "Web & Mobile App QA Testing — MangoPlus.",
+        "image": "https://framerusercontent.com/images/TPOTFYjFLCDbwjehXfRR9SCnZ94.png?width=1200&height=825"
+      },
+      "redirects": [],
+      "thumbnail": "/assets/project-covers/orbit-900x1200.webp"
+    },
+    {
+      "id": "field",
+      "slug": "field",
+      "title": "UIT AI Chatbot",
+      "category": "AI Chatbot Testing",
+      "year": "2025",
+      "status": "published",
+      "featured": false,
+      "client": "UIT AI Chatbot",
+      "scope": "AI Chatbot Testing",
+      "role": "QA Tester",
+      "duration": "",
+      "summary": "Tested UIT’s AI consultation chatbot, focusing on response accuracy, conversation flows, UI behavior and out-of-scope question handling.",
+      "overview": "Tested UIT’s AI consultation chatbot, focusing on response accuracy, conversation flows, UI behavior and out-of-scope question handling.",
+      "cover": "https://framerusercontent.com/images/QmJO0sNC9FYzW7mU46EjCsoh9g.png?width=1536&height=1024",
+      "coverAlt": "UIT AI Chatbot",
+      "gallery": [
+        {
+          "id": "165d1465982b",
+          "url": "https://framerusercontent.com/images/QmJO0sNC9FYzW7mU46EjCsoh9g.png?width=1536&height=1024",
+          "alt": "UIT AI Chatbot — 1",
+          "caption": ""
+        },
+        {
+          "id": "32f116f80f14",
+          "url": "https://framerusercontent.com/images/173P7WbvHMc1Z9lNpSNy6GIYif8.png?width=1066&height=800",
+          "alt": "UIT AI Chatbot — 2",
+          "caption": ""
+        },
+        {
+          "id": "ce443cbc78c4",
+          "url": "https://framerusercontent.com/images/UmXfpYfVhYqoqb1DnbFpIC98OIo.png?width=1066&height=800",
+          "alt": "UIT AI Chatbot — 3",
+          "caption": ""
+        },
+        {
+          "id": "271f229f788d",
+          "url": "https://framerusercontent.com/images/rRp1KaDwStpJ6Pxo05Doj1IjSU.png?width=1066&height=800",
+          "alt": "UIT AI Chatbot — 4",
+          "caption": ""
+        }
+      ],
+      "blocks": [],
+      "liveUrl": "",
+      "source": "https://kiin-portfolio.website/work/damas#work-section",
+      "seo": {
+        "title": "UIT AI Chatbot — KIIN",
+        "description": "Tested UIT’s AI consultation chatbot, focusing on response accuracy, conversation flows, UI behavior and out-of-scope question handling.",
+        "image": "https://framerusercontent.com/images/QmJO0sNC9FYzW7mU46EjCsoh9g.png?width=1536&height=1024"
+      },
+      "redirects": []
+    },
+    {
+      "id": "noveq",
+      "slug": "noveq",
+      "title": "Every Half AI Chatbot",
+      "category": "E-commerce Chatbot Testing",
+      "year": "2024",
+      "status": "published",
+      "featured": false,
+      "client": "Every Half AI Chatbot",
+      "scope": "E-commerce Chatbot Testing",
+      "role": "QA Tester",
+      "duration": "",
+      "summary": "Tested an AI customer-support chatbot covering coffee products, pricing, store locations, purchasing policies and contextual understanding.",
+      "overview": "Tested an AI customer-support chatbot covering coffee products, pricing, store locations, purchasing policies and contextual understanding.",
+      "cover": "/assets/project-covers/noveq-full.webp",
+      "coverAlt": "Every Half AI Chatbot",
+      "gallery": [
+        {
+          "id": "603cd53744ef",
+          "url": "https://framerusercontent.com/images/SEayEoNLuqcgNy2Uz3dkwpOTYs.png?width=1586&height=992",
+          "alt": "Every Half AI Chatbot — 1",
+          "caption": ""
+        },
+        {
+          "id": "dd93a6c1fc47",
+          "url": "https://framerusercontent.com/images/ujTNOAyihWs0g4ns3ZEmKQBW6M.jpeg?width=1400&height=950",
+          "alt": "Every Half AI Chatbot — 2",
+          "caption": ""
+        },
+        {
+          "id": "acfdf92bc4cf",
+          "url": "https://framerusercontent.com/images/v1SmiICbdgfuSlTYmhS054D8sI.jpeg?width=1400&height=950",
+          "alt": "Every Half AI Chatbot — 3",
+          "caption": ""
+        },
+        {
+          "id": "5770d4244e4c",
+          "url": "https://framerusercontent.com/images/ixj3l3ntKSbk66sf6KZmqHxXWi0.jpeg?width=1400&height=950",
+          "alt": "Every Half AI Chatbot — 4",
+          "caption": ""
+        }
+      ],
+      "blocks": [],
+      "liveUrl": "",
+      "source": "https://kiin-portfolio.website/work/najm#work-section",
+      "seo": {
+        "title": "Every Half AI Chatbot — KIIN",
+        "description": "Tested an AI customer-support chatbot covering coffee products, pricing, store locations, purchasing policies and contextual understanding.",
+        "image": "https://framerusercontent.com/images/SEayEoNLuqcgNy2Uz3dkwpOTYs.png?width=1586&height=992"
+      },
+      "redirects": [],
+      "thumbnail": "/assets/project-covers/noveq-900x1200.webp"
+    },
+    {
+      "id": "luma",
+      "slug": "luma",
+      "title": "Phan Kim Design",
+      "category": "Website Design, Development & QA",
+      "year": "2026",
+      "status": "published",
+      "featured": false,
+      "client": "Phan Kim Design",
+      "scope": "Website Design, Development & QA",
+      "role": "QA Tester",
+      "duration": "",
+      "summary": "Website Design, Development & QA — Phan Kim Design.",
+      "overview": "Website Design, Development & QA — Phan Kim Design.",
+      "cover": "https://framerusercontent.com/images/X08h7ztCyniTNVNY8OoESaAog.png?width=1200&height=825",
+      "coverAlt": "Phan Kim Design",
+      "gallery": [
+        {
+          "id": "2513b09bdba3",
+          "url": "https://framerusercontent.com/images/X08h7ztCyniTNVNY8OoESaAog.png?width=1200&height=825",
+          "alt": "Phan Kim Design — 1",
+          "caption": ""
+        }
+      ],
+      "blocks": [],
+      "liveUrl": "",
+      "source": "https://kiin-portfolio.website/work/phan-kim-design#work-section",
+      "seo": {
+        "title": "Phan Kim Design — KIIN",
+        "description": "Website Design, Development & QA — Phan Kim Design.",
+        "image": "https://framerusercontent.com/images/X08h7ztCyniTNVNY8OoESaAog.png?width=1200&height=825"
+      },
+      "redirects": []
+    },
+    {
+      "id": "relay",
+      "slug": "relay",
+      "title": "Bích Thủy Portfolio",
+      "category": "Website Design, Development & QA",
+      "year": "2026",
+      "status": "published",
+      "featured": false,
+      "client": "Bích Thủy Portfolio",
+      "scope": "Website Design, Development & QA",
+      "role": "QA Tester",
+      "duration": "",
+      "summary": "Website Design, Development & QA — Bích Thủy Portfolio.",
+      "overview": "Website Design, Development & QA — Bích Thủy Portfolio.",
+      "cover": "/assets/project-covers/relay-full.webp",
+      "coverAlt": "Bích Thủy Portfolio",
+      "gallery": [
+        {
+          "id": "06abc7dd8235",
+          "url": "https://framerusercontent.com/images/PTZ2PZG1uDniHdseCBkvMSMjwA.png?width=1200&height=825",
+          "alt": "Bích Thủy Portfolio — 1",
+          "caption": ""
+        }
+      ],
+      "blocks": [],
+      "liveUrl": "",
+      "source": "https://kiin-portfolio.website/work/bích-thủy-portfolio#work-section",
+      "seo": {
+        "title": "Bích Thủy Portfolio — KIIN",
+        "description": "Website Design, Development & QA — Bích Thủy Portfolio.",
+        "image": "https://framerusercontent.com/images/PTZ2PZG1uDniHdseCBkvMSMjwA.png?width=1200&height=825"
+      },
+      "redirects": [],
+      "thumbnail": "/assets/project-covers/relay-900x1200.webp"
+    },
+    {
+      "id": "tung-lam",
+      "slug": "tung-lam",
+      "title": "Đỗ Minh Tùng Lâm Port Polio",
+      "category": "Website Design, Development & QA",
+      "year": "2026",
+      "status": "published",
+      "featured": false,
+      "client": "Đỗ Minh Tùng Lâm Port Polio",
+      "scope": "Website Design, Development & QA",
+      "role": "QA Tester",
+      "duration": "",
+      "summary": "Website Design, Development & QA — Đỗ Minh Tùng Lâm Port Polio.",
+      "overview": "Website Design, Development & QA — Đỗ Minh Tùng Lâm Port Polio.",
+      "cover": "/assets/project-covers/tung-lam-full.webp",
+      "coverAlt": "Đỗ Minh Tùng Lâm Port Polio",
+      "gallery": [
+        {
+          "id": "07f0e2f06c07",
+          "url": "https://framerusercontent.com/images/FP2sRNpvUWBKde0xmbiAtEImFRA.png?width=1200&height=825",
+          "alt": "Đỗ Minh Tùng Lâm Port Polio — 1",
+          "caption": ""
+        }
+      ],
+      "blocks": [],
+      "liveUrl": "",
+      "source": "https://kiin-portfolio.website/work/đỗ-minh-tùng-lâm-port-polio#work-section",
+      "seo": {
+        "title": "Đỗ Minh Tùng Lâm Port Polio — KIIN",
+        "description": "Website Design, Development & QA — Đỗ Minh Tùng Lâm Port Polio.",
+        "image": "https://framerusercontent.com/images/FP2sRNpvUWBKde0xmbiAtEImFRA.png?width=1200&height=825"
+      },
+      "redirects": [],
+      "thumbnail": "/assets/project-covers/tung-lam-900x1200.webp"
+    },
+    {
+      "id": "hong-tra",
+      "slug": "hong-tra",
+      "title": "Hồng Trà Hòa Bình",
+      "category": "Website Design, Development & QA",
+      "year": "2026",
+      "status": "published",
+      "featured": false,
+      "client": "Hồng Trà Hòa Bình",
+      "scope": "Website Design, Development & QA",
+      "role": "QA Tester",
+      "duration": "",
+      "summary": "Website Design, Development & QA — Hồng Trà Hòa Bình.",
+      "overview": "Website Design, Development & QA — Hồng Trà Hòa Bình.",
+      "cover": "https://framerusercontent.com/images/1jZIMTn246q5r0UdFssi9uZKdQ.png?width=1200&height=825",
+      "coverAlt": "Hồng Trà Hòa Bình",
+      "gallery": [
+        {
+          "id": "aba5b62abac8",
+          "url": "https://framerusercontent.com/images/1jZIMTn246q5r0UdFssi9uZKdQ.png?width=1200&height=825",
+          "alt": "Hồng Trà Hòa Bình — 1",
+          "caption": ""
+        }
+      ],
+      "blocks": [],
+      "liveUrl": "",
+      "source": "https://kiin-portfolio.website/work/hồng-trà-hòa-bình#work-section",
+      "seo": {
+        "title": "Hồng Trà Hòa Bình — KIIN",
+        "description": "Website Design, Development & QA — Hồng Trà Hòa Bình.",
+        "image": "https://framerusercontent.com/images/1jZIMTn246q5r0UdFssi9uZKdQ.png?width=1200&height=825"
+      },
+      "redirects": []
+    },
+    {
+      "id": "la-yen",
+      "slug": "la-yen",
+      "title": "Là Yên Retreat",
+      "category": "E-commerce Website QA Testing",
+      "year": "2026",
+      "status": "published",
+      "featured": false,
+      "client": "Là Yên Retreat",
+      "scope": "E-commerce Website QA Testing",
+      "role": "QA Tester",
+      "duration": "",
+      "summary": "E-commerce Website QA Testing — Là Yên Retreat.",
+      "overview": "E-commerce Website QA Testing — Là Yên Retreat.",
+      "cover": "/assets/project-covers/la-yen-full.webp",
+      "coverAlt": "Là Yên Retreat",
+      "gallery": [
+        {
+          "id": "5b0df6d4d800",
+          "url": "https://framerusercontent.com/images/QH7ov3tr7ZZ4601dcKUfLoHAg1o.png?width=1200&height=825",
+          "alt": "Là Yên Retreat — 1",
+          "caption": ""
+        }
+      ],
+      "blocks": [],
+      "liveUrl": "",
+      "source": "https://kiin-portfolio.website/work/là-yên-retreat#work-section",
+      "seo": {
+        "title": "Là Yên Retreat — KIIN",
+        "description": "E-commerce Website QA Testing — Là Yên Retreat.",
+        "image": "https://framerusercontent.com/images/QH7ov3tr7ZZ4601dcKUfLoHAg1o.png?width=1200&height=825"
+      },
+      "redirects": [],
+      "thumbnail": "/assets/project-covers/la-yen-900x1200.webp"
+    },
+    {
+      "id": "thanh-xuan",
+      "slug": "thanh-xuan",
+      "title": "Nhà của Thời Thanh Xuân",
+      "category": "E-commerce Website QA Testing",
+      "year": "2026",
+      "status": "published",
+      "featured": false,
+      "client": "Nhà của Thời Thanh Xuân",
+      "scope": "E-commerce Website QA Testing",
+      "role": "QA Tester",
+      "duration": "",
+      "summary": "E-commerce Website QA Testing — Nhà của Thời Thanh Xuân.",
+      "overview": "E-commerce Website QA Testing — Nhà của Thời Thanh Xuân.",
+      "cover": "https://framerusercontent.com/images/X56V4Gf8G41jrAVdWYzarAaYU.png?width=1200&height=825",
+      "coverAlt": "Nhà của Thời Thanh Xuân",
+      "gallery": [
+        {
+          "id": "cfd14df7314c",
+          "url": "https://framerusercontent.com/images/X56V4Gf8G41jrAVdWYzarAaYU.png?width=1200&height=825",
+          "alt": "Nhà của Thời Thanh Xuân — 1",
+          "caption": ""
+        }
+      ],
+      "blocks": [],
+      "liveUrl": "",
+      "source": "https://kiin-portfolio.website/work/nhà-của-thời-thanh-xuân#work-section",
+      "seo": {
+        "title": "Nhà của Thời Thanh Xuân — KIIN",
+        "description": "E-commerce Website QA Testing — Nhà của Thời Thanh Xuân.",
+        "image": "https://framerusercontent.com/images/X56V4Gf8G41jrAVdWYzarAaYU.png?width=1200&height=825"
+      },
+      "redirects": []
+    }
+  ]
+}

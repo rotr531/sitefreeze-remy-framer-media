@@ -32,3 +32,5 @@ h1.framer-text{--framer-text-transform:none!important;text-transform:none!import
 .ticker-item img{object-position:center top!important}
 a[data-v2social]{display:inline-flex;align-items:center;justify-content:center;min-width:24px;min-height:24px;color:inherit}
 a[data-v2social] svg{width:18px!important;height:18px!important;flex:none}
+
+.ticker-item img[src*="/project-covers/"]{object-fit:contain!important;object-position:center!important}

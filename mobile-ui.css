@@ -32,6 +32,7 @@
  #kiin-mobile .km-card{display:block;flex:0 0 76%;min-width:0;scroll-snap-align:start}
  #kiin-mobile .km-card-image{height:240px;background:#f0f0ee;overflow:hidden;display:flex;align-items:center;justify-content:center}
  #kiin-mobile .km-card:nth-child(even) .km-card-image{height:270px}
+ #kiin-mobile .km-card.km-card-portrait .km-card-image{height:auto;aspect-ratio:3 / 4}
  #kiin-mobile .km-card-image img{display:block;width:100%;height:100%;object-fit:contain!important;object-position:center!important}
  #kiin-mobile .km-caption{background:#111;color:white;display:flex;gap:12px;justify-content:space-between;padding:10px 12px;font-size:12px;line-height:1.4;min-height:44px;align-items:center}
  #kiin-mobile .km-caption>span:first-child{overflow-wrap:anywhere}
