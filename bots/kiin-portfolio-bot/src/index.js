@@ -62,7 +62,41 @@ function providerError(status) {
   return `Provider returned HTTP ${status}.`;
 }
 
-async function handleChat(request, env) {
+// Common portfolio questions use the published CMS facts immediately. Other questions
+// continue to the configured AI provider with the original system prompt unchanged.
+async function portfolioAnswer(question, env) {
+  const normalized = question.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd').toLowerCase().replace(/[^a-z0-9 ]/g, '').replace(/\s+/g, ' ').trim();
+  const groups = {
+    contact: ['how can i contact kiin', 'how can i contact trung kien', 'contact', 'contact kiin', 'lien he kien the nao', 'lien he kiin', 'email cua kien la gi'],
+    services: ['what services does trung kien offer', 'what services do you offer', 'services', 'kien cung cap dich vu gi', 'dich vu cua kien', 'kiin co nhung dich vu gi'],
+    projects: ['show me projects', 'show me the projects', 'projects', 'xem cac du an', 'cac du an cua kien', 'kien da lam du an nao'],
+    profile: ['who is trung kien', 'kien la ai', 'kien lam cong viec gi', 'kien dang lam o dau'],
+    pricing: ['what are your rates', 'what is your price', 'bang gia', 'gia dich vu bao nhieu', 'bao gia dich vu'],
+    yeah1: ['tell me about the yeah1 group project', 'du an yeah1 group la gi']
+  };
+  const kind = Object.keys(groups).find(key => groups[key].includes(normalized));
+  if (!kind) return null;
+  let doc;
+  try { doc = await env.CMS?.get('published', 'json'); } catch { /* AI path remains available. */ }
+  const vi = /[\u00c0-\u024f\u1e00-\u1eff]/.test(question) || /^(lien|email cua|kien|kiin co|dich|xem|cac|du an|bang|gia|bao gia)/.test(normalized);
+  const email = doc?.site?.email || 'hello@kiin.ai';
+  const contact = `[${email}](mailto:${email})`;
+  if (kind === 'contact') return vi ? `Bạn có thể liên hệ Kiên qua ${contact}. Hãy chia sẻ dự án và phạm vi kiểm thử để trao đổi thêm.` : `You can contact KIIN at ${contact}. Include your project and the testing support you need.`;
+  if (kind === 'pricing') return vi ? `Portfolio chưa có bảng giá được công bố. Bạn hãy gửi yêu cầu qua ${contact} để trao đổi trực tiếp với Kiên.` : `There is no published price list in this portfolio. Please contact KIIN at ${contact} to discuss your requirements.`;
+  if (kind === 'profile') return vi ? `Trung Kien Nguyen là Manual & AI QA Tester tại 1Creators, ở TP. Hồ Chí Minh. Kiên kiểm thử website, ứng dụng mobile, hệ thống admin và chatbot AI. Liên hệ: ${contact}.` : `Trung Kien Nguyen is a Manual & AI QA Tester based in Ho Chi Minh City, currently working at 1Creators. He tests websites, mobile apps, admin systems and AI chatbots. Contact: ${contact}.`;
+  if (kind === 'services') {
+    const items = vi ? ['Kiểm thử thủ công & chức năng', 'Kiểm tra UI/UX', 'Kiểm thử chatbot AI và chất lượng phản hồi', 'Kiểm thử hệ thống quản trị', 'Kiểm thử web & mobile'] : doc?.site?.lists?.[0]?.items || ['Manual & Functional Testing', 'UI/UX Validation', 'AI Chatbot Testing', 'Admin System Testing', 'Web & Mobile Testing'];
+    return (vi ? 'Kiên có thể hỗ trợ:\n\n' : 'Trung Kien offers:\n\n') + items.map(t => '- ' + t).join('\n') + (vi ? `\n\nTrao đổi dự án qua ${contact}.` : `\n\nDiscuss your project at ${contact}.`);
+  }
+  if (kind === 'projects' && doc) return (vi ? 'Các dự án trong portfolio:\n\n' : 'Selected portfolio projects:\n\n') + doc.projects.filter(p => p.status === 'published').map(p => `- [${p.title}](https://hellokiinai.pages.dev/work/${p.slug}/)${p.year ? ' — ' + p.year : ''}`).join('\n');
+  if (kind === 'yeah1' && doc) {
+    const p = doc.projects.find(p => p.slug === 'morrow');
+    if (p) return (vi ? 'Kiên kiểm thử website Yeah1 Group, tập trung vào điều hướng, trình bày nội dung, bố cục responsive và các hành trình người dùng chính.' : p.overview) + `\n\n[${vi ? 'Xem dự án Yeah1 Group' : 'View the Yeah1 Group project'}](https://hellokiinai.pages.dev/work/${p.slug}/)`;
+  }
+  return null;
+}
+
+async function handleChat(request, env, ctx) {
   if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS });
   if (request.method !== "POST") return jsonResponse({ error: "Use POST." }, 405);
 
@@ -96,10 +130,19 @@ async function handleChat(request, env) {
     return jsonResponse({ error: "Send messages ending with a user message." }, 400);
   }
 
+  const answer = await portfolioAnswer(clean[clean.length - 1].content, env);
+  if (answer) return new Response(`data: ${JSON.stringify({ content: answer, source: 'portfolio' })}\n\ndata: [DONE]\n\n`, { headers: { ...CORS, 'Content-Type': 'text/event-stream', 'Cache-Control': 'no-store' } });
+
+  const controller = new AbortController();
+  const deadline = setTimeout(() => controller.abort(), 60000);
+  const abort = () => controller.abort();
+  request.signal.addEventListener('abort', abort, { once: true });
+  const cleanup = () => { clearTimeout(deadline); request.signal.removeEventListener('abort', abort); };
   let upstream;
   try {
     upstream = await fetch(`${baseUrl}/chat/completions`, {
       method: "POST",
+      signal: controller.signal,
       headers: { "Content-Type": "application/json", Authorization: `Bearer ${apiKey}` },
       body: JSON.stringify({
         model,
@@ -110,15 +153,23 @@ async function handleChat(request, env) {
       }),
     });
   } catch {
+    cleanup();
     return jsonResponse({ error: "Could not reach the AI provider. Check OPENAI_BASE_URL." }, 502);
   }
-  if (!upstream.ok) return jsonResponse({ error: providerError(upstream.status) }, 502);
+  if (!upstream.ok) { cleanup(); return jsonResponse({ error: providerError(upstream.status) }, 502); }
 
   const sseHeaders = { ...CORS, "Content-Type": "text/event-stream", "Cache-Control": "no-cache" };
   const contentType = upstream.headers.get("content-type") || "";
   if (contentType.includes("application/json")) {
-    const data = await upstream.json();
-    const text = data?.choices?.[0]?.message?.content || "";
+    let data;
+    try {
+      const reader = upstream.body.getReader(); let bytes = 0, raw = ''; const decoder = new TextDecoder();
+      for (;;) { const chunk = await reader.read(); if (chunk.done) break; bytes += chunk.value.length; if (bytes > 131072) { await reader.cancel(); throw Error('Response too large'); } raw += decoder.decode(chunk.value, {stream:true}); }
+      data = JSON.parse(raw + decoder.decode());
+    } catch { cleanup(); return jsonResponse({error:'The AI provider returned an invalid reply. Please try again.'},502); }
+    cleanup();
+    const text = typeof data?.choices?.[0]?.message?.content === "string" ? data.choices[0].message.content : "";
+    if (data.error || !text.trim()) return jsonResponse({error:'The AI provider could not complete this reply. Please try again.'},502);
     return new Response((text ? `data: ${JSON.stringify({ content: text })}\n\n` : "") + "data: [DONE]\n\n", {
       headers: sseHeaders,
     });
@@ -128,27 +179,29 @@ async function handleChat(request, env) {
   const { readable, writable } = new TransformStream();
   const writer = writable.getWriter();
   const enc = new TextEncoder();
-  (async () => {
+  const streaming = (async () => {
     const reader = upstream.body.getReader();
     const decoder = new TextDecoder();
-    let buffer = "";
+    let buffer = "", providerDone = false;
     try {
       for (;;) {
         const { done, value } = await reader.read();
         if (done) break;
         buffer += decoder.decode(value, { stream: true });
-        const parts = buffer.split("\n\n");
+        const parts = buffer.split(/\r?\n\r?\n/);
         buffer = parts.pop();
         for (const part of parts) {
           for (const line of part.split("\n")) {
             const t = line.trim();
             if (!t.startsWith("data:")) continue;
             const payload = t.slice(5).trim();
-            if (payload === "[DONE]") continue;
+            if (payload === "[DONE]") { providerDone = true; continue; }
             try {
               const json = JSON.parse(payload);
+              if (json.error) { await writer.write(enc.encode(`data: ${JSON.stringify({error:'The AI provider could not complete this reply.'})}\n\n`)); continue; }
+              if (json?.choices?.some(choice => choice.finish_reason)) providerDone = true;
               const delta = json?.choices?.[0]?.delta?.content || json?.choices?.[0]?.message?.content || "";
-              if (delta) await writer.write(enc.encode(`data: ${JSON.stringify({ content: delta })}\n\n`));
+              if (delta.replace(/[\u200b\u2060\ufeff]/g, '')) await writer.write(enc.encode(`data: ${JSON.stringify({ content: delta })}\n\n`));
             } catch {
               // ignore malformed chunks
             }
@@ -156,18 +209,23 @@ async function handleChat(request, env) {
         }
       }
     } catch {
-      // Stream cut off mid-way: end gracefully with what was already sent.
+      try { await writer.write(enc.encode(`data: ${JSON.stringify({error:'The AI connection was interrupted. Please try again.'})}\n\n`)); } catch {}
+      providerDone = true;
     }
-    await writer.write(enc.encode("data: [DONE]\n\n"));
-    await writer.close();
-  })();
+    try {
+      if (!providerDone && !buffer.includes('data: [DONE]')) await writer.write(enc.encode(`data: ${JSON.stringify({error:'The AI reply ended unexpectedly. Please try again.'})}\n\n`));
+      await writer.write(enc.encode("data: [DONE]\n\n"));
+      await writer.close();
+    } finally { cleanup(); await reader.cancel().catch(() => {}); }
+  })().catch(() => { /* Client disconnected or cancelled. */ });
+  if (ctx) ctx.waitUntil(streaming);
   return new Response(readable, { headers: sseHeaders });
 }
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
-    if (url.pathname === "/api/chat") return handleChat(request, env);
+    if (url.pathname === "/api/chat") return handleChat(request, env, ctx);
     if (env.ASSETS) return env.ASSETS.fetch(request);
     return new Response("Not found", { status: 404 });
   },
