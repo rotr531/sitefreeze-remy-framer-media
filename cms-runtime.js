@@ -13,6 +13,7 @@
   window.addEventListener('resize',applyCurrent);
   fetch('/api/cms/'+(preview?'draft':'public'),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(next=>{if(next?.schemaVersion===2&&(next.revision!==current.revision||next.updatedAt!==current.updatedAt)){current=next;applyCurrent()}}).catch(()=>{});
   if(preview){const badge=document.createElement('a');badge.href='/admin/';badge.textContent='BẢN NHÁP · Quay lại CMS';badge.style.cssText='position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:2147483647;background:#263c2e;color:#fff;padding:12px 20px;border-radius:30px;font:13px system-ui';document.body.append(badge)}
+  document.addEventListener('click',e=>{const a=e.target.closest?.('a');if(a&&!e.defaultPrevented&&e.button===0&&!e.ctrlKey&&!e.metaKey&&!e.shiftKey&&!e.altKey&&(!a.target||a.target==='_self')&&new URL(a.href,location.href).origin===location.origin&&a.getAttribute('href')?.includes('/work/')){e.preventDefault();e.stopImmediatePropagation();location.assign(a.href)}},true);
   return;
  }
  let data;try{const r=await fetch('/api/cms/'+(preview?'draft':'public'),{cache:'no-store'});if(!r.ok)throw Error();data=await r.json()}catch{return}
