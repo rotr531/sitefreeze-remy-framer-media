@@ -18,3 +18,9 @@ a[href*="framer.link/LFp4JP9"],.framer-vcaUb,#__framer-badge-container{display:n
  .framer-rao0J .framer-1fxw09g{height:44px!important;width:44px!important;min-width:44px!important;flex:none!important;touch-action:manipulation}
  .framer-j6xo83{-webkit-mask-image:linear-gradient(to right,transparent,#000 14px,#000 calc(100% - 14px),transparent);mask-image:linear-gradient(to right,transparent,#000 14px,#000 calc(100% - 14px),transparent)}
 }
+
+/* Keep the mobile headline in normal flow below the measured project strip. */
+@media(max-width:809.98px){
+ .framer-wDpjd .framer-142knc0{height:auto!important;min-height:0!important;flex:none!important;justify-content:flex-start!important}
+ .framer-wDpjd .framer-1lklpse-container{height:auto!important;min-height:0!important;aspect-ratio:1152.5032884896812 / 140;flex:none!important}
+}
