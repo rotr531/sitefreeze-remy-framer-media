@@ -23,7 +23,6 @@
  #kiin-mobile .km-available:before{content:'';height:6px;width:6px;border-radius:50%;background:#69a72b}
  #kiin-mobile .km-hero h1{font-weight:800;font-size:clamp(36px,9.6vw,70px);line-height:1.06;letter-spacing:-.065em;overflow-wrap:normal}
  #kiin-mobile .km-role{font-size:17px;margin-top:14px;font-weight:500}
- #kiin-mobile .km-meta time{white-space:nowrap}
  #kiin-mobile .km-meta{display:flex;flex-wrap:wrap;gap:4px 16px;color:#737373;font-size:11px;margin-top:8px;justify-content:space-between}
  #kiin-mobile .km-projects{padding:16px 0 28px;border-top:1px solid #dedede}
  #kiin-mobile .km-section-heading{padding:0 20px 16px;display:flex;justify-content:space-between;align-items:center}
