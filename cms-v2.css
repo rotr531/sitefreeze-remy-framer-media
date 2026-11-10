@@ -37,12 +37,15 @@ a[data-v2social] svg{width:18px!important;height:18px!important;flex:none}
 
 /* The home page uses the same headline, ticker and bio across breakpoints. */
 @media (max-width:809.98px){
+ #main:has(#hero){
+  --kiin-mobile-hero-height:max(clamp(480px,84svh,760px), calc(var(--kiin-mobile-chrome,340px) + var(--kiin-mobile-headline-height,110px) + 24px));
+ }
  #main:has(#hero) .framer-1xg56a2{
   padding:56px 0 0!important;
-  min-height:clamp(480px,84svh,760px)!important;
+  min-height:var(--kiin-mobile-hero-height)!important;
  }
  #main:has(#hero) .framer-qjuda7{
-  top:clamp(480px,84svh,760px);
+  top:var(--kiin-mobile-hero-height);
   transform:translateY(-100%);
   padding:0;
  }
@@ -51,7 +54,6 @@ a[data-v2social] svg{width:18px!important;height:18px!important;flex:none}
   mask-image:none;
   -webkit-mask-image:none;
  }
- #main:has(#hero) .framer-1jrzttq,
  #main:has(#hero) .framer-142knc0{max-width:100%}
  #about{scroll-margin-top:56px}
  #about a[data-kiin-bio-project]{display:inline-block;padding:4px 0;margin:-4px 0}

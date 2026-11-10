@@ -38,7 +38,13 @@ const chromeObserved=new WeakSet();let chromeFrame=false;const chromeResize=type
 function mobileLayout(){
  const mobile=matchMedia('(max-width:809.98px)').matches;
  for(const button of document.querySelectorAll('button.framer-1fxw09g')){const header=button.closest('header');const menu=header?.querySelector('.framer-at6zfw');const open=mobile&&!!menu&&getComputedStyle(menu).display!=='none';button.setAttribute('aria-label',open?'Đóng menu':'Mở menu');button.setAttribute('aria-expanded',String(open));button.setAttribute('aria-controls','kiin-mobile-menu');if(menu)menu.id='kiin-mobile-menu';}
- if(mobile){for(const node of document.querySelectorAll('header.framer-rao0J,.framer-f9qkd2-container'))if(chromeResize&&!chromeObserved.has(node)){chromeObserved.add(node);chromeResize.observe(node)}const header=[...document.querySelectorAll('header.framer-rao0J')].find(e=>e.getBoundingClientRect().width>0);const tickers=[...document.querySelectorAll('.framer-f9qkd2-container')].map(e=>e.getBoundingClientRect()).filter(r=>r.width>0&&r.height>0);const tickerHeight=Math.max(0,...tickers.map(r=>r.height));const height=Math.max(56,header?.getBoundingClientRect().height||0)+tickerHeight;const value=Math.ceil(height)+'px';if(document.documentElement.style.getPropertyValue('--kiin-mobile-chrome')!==value)document.documentElement.style.setProperty('--kiin-mobile-chrome',value);}
+ if(mobile){for(const node of document.querySelectorAll('header.framer-rao0J,.framer-f9qkd2-container,#hero .framer-142knc0'))if(chromeResize&&!chromeObserved.has(node)){chromeObserved.add(node);chromeResize.observe(node)}const header=[...document.querySelectorAll('header.framer-rao0J')].find(e=>e.getBoundingClientRect().width>0);const tickers=[...document.querySelectorAll('.framer-f9qkd2-container')].map(e=>e.getBoundingClientRect()).filter(r=>r.width>0&&r.height>0);const tickerHeight=Math.max(0,...tickers.map(r=>r.height));const height=Math.max(56,header?.getBoundingClientRect().height||0)+tickerHeight;const value=Math.ceil(height)+'px';if(document.documentElement.style.getPropertyValue('--kiin-mobile-chrome')!==value)document.documentElement.style.setProperty('--kiin-mobile-chrome',value);
+  const headline=document.querySelector('#hero .framer-142knc0');
+  if(headline){
+   const height=Math.ceil(headline.getBoundingClientRect().height)+'px';
+   if(document.documentElement.style.getPropertyValue('--kiin-mobile-headline-height')!==height)document.documentElement.style.setProperty('--kiin-mobile-headline-height',height);
+  }
+ }
  const clock=document.querySelectorAll('.framer-1pyigoo');for(const node of clock){node.setAttribute('title','Ho Chi Minh City, Vietnam — UTC+7');node.setAttribute('aria-label','Ho Chi Minh City, Vietnam (UTC+7)');}
 }
 
