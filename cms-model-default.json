@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "site": {
     "brand": "KIIN",
-    "heroTitle": "HELLO KIIN",
+    "heroTitle": "Hello I'm Kiin",
     "intro": "I’m Trung Kien Nguyen, a Manual QA Tester based in Ho Chi Minh City, Vietnam, currently working at 1Creators.",
     "bio": "I test websites, mobile apps, admin systems, and AI chatbots, focusing on functionality, usability, and AI response quality. I work with developers and product teams to identify bugs, verify fixes, and support reliable releases.",
     "role": "Manual & AI QA Tester",
@@ -201,7 +201,7 @@
       ],
       "blocks": [],
       "liveUrl": "",
-      "source": "https://kiin-portfolio.website/work/kavi#work-section",
+      "source": "https://kiin.engineer/work/northbeam/",
       "seo": {
         "title": "1Creators Platform — KIIN",
         "description": "Tested the internal website and mobile application, including content, livestream, messaging, voting, ticket purchasing and cross-device compatibility.",
@@ -388,7 +388,7 @@
       ],
       "blocks": [],
       "liveUrl": "",
-      "source": "https://kiin-portfolio.website/work/najm#work-section",
+      "source": "https://kiin.engineer/work/noveq/",
       "seo": {
         "title": "Every Half AI Chatbot — KIIN",
         "description": "Tested an AI customer-support chatbot covering coffee products, pricing, store locations, purchasing policies and contextual understanding.",
