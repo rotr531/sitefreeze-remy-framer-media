@@ -34,3 +34,25 @@ a[data-v2social]{display:inline-flex;align-items:center;justify-content:center;m
 a[data-v2social] svg{width:18px!important;height:18px!important;flex:none}
 
 .ticker-item img[src*="/project-covers/"]{object-fit:contain!important;object-position:center!important}
+
+/* The home page uses the same headline, ticker and bio across breakpoints. */
+@media (max-width:809.98px){
+ #main:has(#hero) .framer-1xg56a2{
+  padding:56px 0 0!important;
+  min-height:clamp(480px,84svh,760px)!important;
+ }
+ #main:has(#hero) .framer-qjuda7{
+  top:clamp(480px,84svh,760px);
+  transform:translateY(-100%);
+  padding:0;
+ }
+ #main:has(#hero) .framer-f9qkd2-container{top:0!important}
+ #main:has(#hero) .framer-j6xo83{
+  mask-image:none;
+  -webkit-mask-image:none;
+ }
+ #main:has(#hero) .framer-1jrzttq,
+ #main:has(#hero) .framer-142knc0{max-width:100%}
+ #about{scroll-margin-top:56px}
+ #about a[data-kiin-bio-project]{display:inline-block;padding:4px 0;margin:-4px 0}
+}
