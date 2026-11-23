@@ -62,11 +62,66 @@ function aboutHTML(doc) {
  return '<div class="qa-about"><div class="qa-profile">' + (s.portrait ? '<img src="'+esc(s.portrait)+'" alt="'+esc(s.portraitAlt || '')+'">' : '') + '<h2>About</h2></div><div class="qa-copy"><p>' + intro + '</p><p>' + esc(s.bio) + '</p><div class="qa-actions"><a href="' + esc(s.ctaUrl) + '">' + esc(s.ctaLabel) + '</a>' + cv + '</div></div><div class="qa-lists">' + lists + '</div></div>';
 }
 
-function caseStudy(project, site) {
+const ASSET_VERSION = 'cv-refresh-20261123';
+
+function personJSONLD(site, origin) {
+ const data = {
+  '@context': 'https://schema.org', '@type': 'Person', name: 'Trung Kien Nguyen', alternateName: site.brand,
+  jobTitle: site.role, email: site.email, url: origin + '/',
+  address: {'@type': 'PostalAddress', addressLocality: 'Ho Chi Minh City', addressCountry: 'VN'},
+  sameAs: (site.socials || []).filter(x => x.enabled && /^https:\/\//.test(x.url)).map(x => x.url)
+ };
+ return '<script type="application/ld+json">' + JSON.stringify(data).replace(/</g, '\\u003c') + '</script>';
+}
+
+function heroIntroHTML(doc) {
+ const s = doc.site, e = escapeHTML;
+ const lines = Array.isArray(s.heroLog) && s.heroLog.length ? s.heroLog : [
+  ['cmd', '$ qa run --project yfan --env staging'],
+  ['pass', 'Requirements reviewed · test cases written'],
+  ['pass', 'Functional & regression · web, Android, iOS, admin'],
+  ['pass', 'API checks · auth, profile, CRUD in Postman'],
+  ['pass', 'Network & console traced in Chrome DevTools'],
+  ['fail', 'Edge case found → logged in Jira with steps & evidence'],
+  ['pass', 'Fix verified · related flows retested'],
+  ['sum', '20+ feature releases supported · ready to ship']
+ ];
+ const log = lines.map(l => '<li class="qa-log-' + e(l[0]) + '">' + (l[0] === 'pass' ? '<b aria-hidden="true">✓</b> ' : l[0] === 'fail' ? '<b aria-hidden="true">✗</b> ' : '') + e(l[1]) + '</li>').join('');
+ const cv = s.cvPath ? '<a class="qa-btn qa-btn-ghost" href="' + e(s.cvPath) + '" target="_blank" rel="noopener noreferrer">View CV (PDF)</a>' : '';
+ return '<div class="qa-hero-intro"><div class="qa-hero-copy"><p>' + e(s.heroSummary || s.intro) + '</p><div class="qa-hero-actions"><a class="qa-btn" href="' + e(s.ctaUrl) + '">' + e(s.ctaLabel) + '</a>' + cv + '<button class="qa-btn qa-btn-ghost" type="button" data-copy="' + e(s.email) + '">Copy email</button></div></div>'
+  + '<figure class="qa-log" aria-label="Example QA run"><figcaption><span></span><span></span><span></span>qa-run.log</figcaption><ol>' + log + '</ol></figure></div>';
+}
+
+function caseStudy(project, site, projects, origin) {
  const e = escapeHTML;
- const meta = [project.role,project.duration,project.scope].filter(Boolean).map(e).join(' · ');
- const html = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + e(project.seo.title) + '</title><meta name="description" content="'+e(project.summary)+'"><link rel="stylesheet" href="/qa-portfolio.css"></head><body class="qa-case"><header><a href="/">KIIN</a><a href="/#about">Back to About</a></header><main><h1>'+e(project.title)+'</h1><p class="qa-meta">'+meta+'</p>'+articleHTML(project,e)+'</main><footer><a href="'+e(site.ctaUrl)+'">'+e(site.ctaLabel)+'</a></footer><script src="https://kiin-portfolio-bot.rotr531.workers.dev/kiin-chat-widget.js?v=chat-experience-20261026" data-api="https://kiin-portfolio-bot.rotr531.workers.dev/api/chat" defer></script></body></html>';
- return new Response(html,{headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store'}});
+ const title = (project.seo && project.seo.title) || project.title + ' — ' + site.brand;
+ const description = (project.seo && project.seo.description) || project.summary || '';
+ const image = (project.seo && project.seo.image) || project.cover || site.seo.image || '';
+ const canonical = origin + '/work/' + project.slug + '/';
+ const facts = [['Client', project.client], ['Role', project.role], ['Scope', project.scope], [project.duration ? 'Timeline' : 'Year', project.duration || project.year]]
+  .filter(f => f[1]).map(f => '<div><dt>' + e(f[0]) + '</dt><dd>' + e(f[1]) + '</dd></div>').join('');
+ const live = /^https:\/\//.test(project.liveUrl || '') ? '<a class="qa-btn" href="' + e(project.liveUrl) + '" target="_blank" rel="noopener noreferrer">Visit live site ↗</a>' : '';
+ const cv = site.cvPath ? '<a class="qa-btn qa-btn-ghost" href="' + e(site.cvPath) + '" target="_blank" rel="noopener noreferrer">View CV (PDF)</a>' : '';
+ const cover = project.cover ? '<figure class="qa-case-cover"><img src="' + e(project.cover) + '" alt="' + e(project.coverAlt || project.title) + '" fetchpriority="high" decoding="async"></figure>' : '';
+ const gallery = (project.gallery || []).filter(g => imageOK(g.url) && g.url !== project.cover);
+ const galleryHTML = gallery.length ? '<section class="qa-case-gallery" aria-label="Screenshots">' + gallery.map(g => '<figure><img src="' + e(g.url) + '" alt="' + e(g.alt || project.title) + '" loading="lazy" decoding="async">' + (g.caption ? '<figcaption>' + e(g.caption) + '</figcaption>' : '') + '</figure>').join('') + '</section>' : '';
+ const ready = projects.filter(p => p.detailReady && p.status === 'published' && !p.hideFromLists);
+ const next = ready.length > 1 ? ready[(ready.findIndex(p => p.slug === project.slug) + 1) % ready.length] : null;
+ const nextHTML = next && next.slug !== project.slug ? '<a class="qa-next" href="/work/' + e(next.slug) + '/"><span>Next case study</span><strong>' + e(next.title) + ' →</strong></a>' : '';
+ const html = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+  + '<title>' + e(title) + '</title><meta name="description" content="' + e(description) + '"><link rel="canonical" href="' + e(canonical) + '">'
+  + '<meta property="og:type" content="article"><meta property="og:title" content="' + e(title) + '"><meta property="og:description" content="' + e(description) + '"><meta property="og:url" content="' + e(canonical) + '">'
+  + (image ? '<meta property="og:image" content="' + e(new URL(image, origin).href) + '"><meta name="twitter:card" content="summary_large_image">' : '')
+  + '<meta name="robots" content="' + (site.seo.indexable ? 'index,follow' : 'noindex,nofollow') + '">'
+  + '<link rel="stylesheet" href="/qa-portfolio.css?v=' + ASSET_VERSION + '"><script src="/kiin-fx.js?v=' + ASSET_VERSION + '" defer></script></head>'
+  + '<body class="qa-case"><header class="qa-case-nav"><a class="qa-brand" href="/">Kiin</a><nav aria-label="Case study"><a href="/#about">About</a>' + cv.replace('qa-btn qa-btn-ghost', 'qa-nav-cv') + '<a href="' + e(site.ctaUrl) + '">' + e(site.ctaLabel) + '</a></nav></header>'
+  + '<main><div class="qa-case-intro"><p class="qa-eyebrow">' + e([project.category, project.year].filter(Boolean).join(' · ')) + '</p><h1>' + e(project.title) + '</h1>'
+  + (project.summary ? '<p class="qa-lead">' + e(project.summary) + '</p>' : '') + (facts ? '<dl class="qa-facts">' + facts + '</dl>' : '')
+  + '<div class="qa-case-actions">' + live + '<button class="qa-btn qa-btn-ghost" type="button" data-copy="' + e(site.email) + '">Copy email</button></div></div>'
+  + cover + '<article class="qa-case-body cms-project-body">' + articleHTML({...project, overview: project.overview === project.summary ? '' : project.overview}, e) + '</article>' + galleryHTML + nextHTML + '</main>'
+  + '<footer class="qa-case-footer"><div><p>Need a careful pair of eyes before your next release?</p><a class="qa-btn" href="' + e(site.ctaUrl) + '">' + e(site.ctaLabel) + '</a>' + cv + '</div><p class="qa-copyright">' + e(site.copyright) + '</p></footer>'
+  + '<script src="https://kiin-portfolio-bot.rotr531.workers.dev/kiin-chat-widget.js?v=chat-experience-20261026" data-api="https://kiin-portfolio-bot.rotr531.workers.dev/api/chat" defer></script></body></html>';
+ return new Response(html, {headers: {'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store'}});
 }
 
 async function publicHTML(r,env,u){
@@ -76,21 +131,21 @@ async function publicHTML(r,env,u){
 
  const plain=(body,status,type)=>new Response(body,{status,headers:{'Content-Type':type,'Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}});
  if(pathname==='/robots.txt')return plain('User-agent: *\nAllow: /\nDisallow: /admin/\nDisallow: /api/\nSitemap: '+u.origin+'/sitemap.xml\n',200,'text/plain; charset=utf-8');
- if(pathname==='/sitemap.xml'){return plain('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>'+u.origin+'/</loc></url></urlset>',200,'application/xml; charset=utf-8');}
+ if(pathname==='/sitemap.xml'){const d=await document(env,r,'published');const urls=['/'].concat(d.projects.filter(p=>p.status==='published'&&p.detailReady).map(p=>'/work/'+p.slug+'/'));return plain('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+urls.map(x=>'<url><loc>'+u.origin+x+'</loc></url>').join('')+'</urlset>',200,'application/xml; charset=utf-8');}
  const missing=()=>plain('<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Page not found — KIIN</title><body style="font-family:Arial,sans-serif;margin:0;padding:12vw;color:#111"><a href="/" style="color:inherit">KIIN</a><h1>Page not found</h1><p>This page does not exist.</p><a href="/" style="color:inherit">Back to home</a></body></html>',404,'text/html; charset=utf-8');
  const isPage=pathname==='/'||pathname==='/index.html'||/^\/work\/[-a-z0-9]+\/(?:index\.html)?$/.test(pathname)||/^\/work\/[-a-z0-9]+$/.test(pathname);
  if(!isPage){if(pathname==='/admin'||pathname==='/admin/'||pathname==='/admin/index.html')return env.ASSETS.fetch(r);const a=await env.ASSETS.fetch(r);if(a.status===404||a.headers.get('Content-Type')?.includes('text/html'))return missing();return a;}
- const doc=await document(env,r,'published');const slug=u.pathname.match(/^\/work\/([^/]+)(?:\/index\.html|\/)?$/)?.[1];const preview=u.searchParams.has('cms-preview')&&await auth(r,env);const content=preview?await document(env,r,'draft'):doc;let pr=slug&&content.projects.find(p=>p.slug===slug&&(preview||p.status==='published'));if(slug&&!pr){const redirect=content.projects.find(p=>p.redirects.includes(slug)&&p.status==='published');if(redirect)return Response.redirect(u.origin+'/work/'+redirect.slug+'/',301);return new Response('Project not found',{status:404,headers:{'Content-Type':'text/plain; charset=utf-8'}})}if(pr?.detailReady)return caseStudy(pr,content.site);if(pr&&!preview)return plain('Coming soon',503,'text/plain; charset=utf-8');let res=await env.ASSETS.fetch(r);if(slug&&(res.status===404||!['morrow','northbeam','hana','orbit','field','noveq','luma','relay','tung-lam','hong-tra','la-yen','thanh-xuan'].includes(slug)))res=await env.ASSETS.fetch(new Request(new URL('/work/morrow/',r.url)));if(!res.headers.get('Content-Type')?.includes('text/html'))return res;const seo=pr?.seo||content.site.seo,title=seo.title||pr?.title||content.site.brand;const esc=v=>String(v||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));let extra='<link rel="stylesheet" href="/cms-v2.css?v=qa-20261121"><link rel="stylesheet" href="/mobile-ui.css?v=qa-20261121"><script src="/mobile-ui.js?v=qa-20261121" defer></script><script src="/cms-v2.js?v=qa-20261121" defer></script>';if(u.searchParams.has('__qc'))extra+='<script>window.__KIIN_QC={errors:[],warnings:[]};addEventListener("error",function(e){window.__KIIN_QC.errors.push({message:String(e.message||"Resource error").slice(0,800),url:e.filename||e.target.src||e.target.href||""})},true);["error","warn"].forEach(function(level){var original=console[level];console[level]=function(){var data=Array.from(arguments).map(String).join(" ").slice(0,1000);window.__KIIN_QC[level==="error"?"errors":"warnings"].push({message:data});original.apply(console,arguments)}});<\/script>';
+ const doc=await document(env,r,'published');const slug=u.pathname.match(/^\/work\/([^/]+)(?:\/index\.html|\/)?$/)?.[1];const preview=u.searchParams.has('cms-preview')&&await auth(r,env);const content=preview?await document(env,r,'draft'):doc;let pr=slug&&content.projects.find(p=>p.slug===slug&&(preview||p.status==='published'));if(slug&&!pr){const redirect=content.projects.find(p=>p.redirects.includes(slug)&&p.status==='published');if(redirect)return Response.redirect(u.origin+'/work/'+redirect.slug+'/',301);return new Response('Project not found',{status:404,headers:{'Content-Type':'text/plain; charset=utf-8'}})}if(pr?.detailReady)return caseStudy(pr,content.site,content.projects,u.origin);if(pr&&!preview)return Response.redirect(u.origin+'/',302);let res=await env.ASSETS.fetch(r);if(slug&&(res.status===404||!['morrow','northbeam','hana','orbit','field','noveq','luma','relay','tung-lam','hong-tra','la-yen','thanh-xuan'].includes(slug)))res=await env.ASSETS.fetch(new Request(new URL('/work/morrow/',r.url)));if(!res.headers.get('Content-Type')?.includes('text/html'))return res;const seo=pr?.seo||content.site.seo,title=seo.title||pr?.title||content.site.brand;const esc=v=>String(v||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));let extra='<link rel="stylesheet" href="/cms-v2.css?v='+ASSET_VERSION+'"><link rel="stylesheet" href="/mobile-ui.css?v='+ASSET_VERSION+'"><script src="/mobile-ui.js?v='+ASSET_VERSION+'" defer></script><script src="/cms-v2.js?v='+ASSET_VERSION+'" defer></script><script src="/kiin-fx.js?v='+ASSET_VERSION+'" defer></script>'+personJSONLD(content.site,u.origin);if(u.searchParams.has('__qc'))extra+='<script>window.__KIIN_QC={errors:[],warnings:[]};addEventListener("error",function(e){window.__KIIN_QC.errors.push({message:String(e.message||"Resource error").slice(0,800),url:e.filename||e.target.src||e.target.href||""})},true);["error","warn"].forEach(function(level){var original=console[level];console[level]=function(){var data=Array.from(arguments).map(String).join(" ").slice(0,1000);window.__KIIN_QC[level==="error"?"errors":"warnings"].push({message:data});original.apply(console,arguments)}});<\/script>';
  const initialData=JSON.stringify({schemaVersion:2,revision:content.revision,updatedAt:content.updatedAt,site:content.site,projects:preview?content.projects:content.projects.filter(p=>p.status==='published')}).replace(/</g,'\\u003c');extra+='<script type="application/json" id="kiin-initial-data">'+initialData+'</script>';
- extra+='<link rel="stylesheet" href="/qa-portfolio.css"><template id="kiin-about-template">'+aboutHTML(content)+'</template>';
- extra+=`<meta name="robots" content="${content.site.seo.indexable?'index,follow':'noindex,nofollow'}">`;if(content.site.seo.favicon)extra+=`<link rel="icon" href="${esc(content.site.seo.favicon)}">`;let rewriter=new HTMLRewriter().on('title',{element:e=>e.setInnerContent(title)}).on('meta[name="description"],meta[property="og:description"],meta[name="twitter:description"]',{element:e=>e.setAttribute('content',seo.description||'')}).on('meta[property="og:title"],meta[name="twitter:title"]',{element:e=>e.setAttribute('content',title)}).on('meta[property="og:image"],meta[name="twitter:image"]',{element:e=>e.setAttribute('content',new URL(seo.image||pr?.cover||'/',u.origin).href)}).on('link[rel="canonical"]',{element:e=>e.setAttribute('href',pr?u.origin+'/work/'+pr.slug+'/':content.site.seo.canonical||u.origin+'/')}).on('meta[property="og:url"]',{element:e=>e.setAttribute('content',u.origin+(pr?'/work/'+pr.slug+'/':'/'))}).on('meta[name="generator"]',{element:e=>e.setAttribute('content',content.site.brand+' Portfolio')}).on('[style*="pGiXYozQ3mE4cilNOItfe2L2fUA"]',{element:e=>e.setAttribute('style',(e.getAttribute('style')||'').replaceAll('https://framerusercontent.com/images/pGiXYozQ3mE4cilNOItfe2L2fUA.svg','/assets/kiin-spinner.svg'))}).on('head',{element:e=>e.append(extra,{html:true})});
+ extra+='<link rel="stylesheet" href="/qa-portfolio.css?v='+ASSET_VERSION+'"><template id="kiin-about-template">'+aboutHTML(content)+'</template>'+(pr?'':'<template id="kiin-hero-template">'+heroIntroHTML(content)+'</template>');
+ extra+=`<meta name="robots" content="${content.site.seo.indexable?'index,follow':'noindex,nofollow'}">`;if(content.site.seo.favicon)extra+=`<link rel="icon" href="${esc(content.site.seo.favicon)}">`;let rewriter=new HTMLRewriter().on('meta[name="robots"]',{element:e=>e.remove()}).on('meta[name="framer-search-index"],meta[name="framer-search-index-fallback"]',{element:e=>e.remove()}).on('a[href^="mailto:"]',{element:e=>{e.removeAttribute('target');e.removeAttribute('rel')}}).on('title',{element:e=>e.setInnerContent(title)}).on('meta[name="description"],meta[property="og:description"],meta[name="twitter:description"]',{element:e=>e.setAttribute('content',seo.description||'')}).on('meta[property="og:title"],meta[name="twitter:title"]',{element:e=>e.setAttribute('content',title)}).on('meta[property="og:image"],meta[name="twitter:image"]',{element:e=>e.setAttribute('content',new URL(seo.image||pr?.cover||'/',u.origin).href)}).on('link[rel="canonical"]',{element:e=>e.setAttribute('href',pr?u.origin+'/work/'+pr.slug+'/':content.site.seo.canonical||u.origin+'/')}).on('meta[property="og:url"]',{element:e=>e.setAttribute('content',u.origin+(pr?'/work/'+pr.slug+'/':'/'))}).on('meta[name="generator"]',{element:e=>e.setAttribute('content',content.site.brand+' Portfolio')}).on('[style*="pGiXYozQ3mE4cilNOItfe2L2fUA"]',{element:e=>e.setAttribute('style',(e.getAttribute('style')||'').replaceAll('https://framerusercontent.com/images/pGiXYozQ3mE4cilNOItfe2L2fUA.svg','/assets/kiin-spinner.svg'))}).on('head',{element:e=>e.append(extra,{html:true})});
  rewriter=rewriter.on('body',{element:e=>e.append("<script src=\"https://kiin-portfolio-bot.rotr531.workers.dev/kiin-chat-widget.js?v=chat-experience-20261026\" data-api=\"https://kiin-portfolio-bot.rotr531.workers.dev/api/chat\" defer></script>",{html:true})});
  let cardProject,cardParagraph=0,footerCount=0;rewriter=rewriter.on('li a[href*="work/"]',{element:e=>{const slug=(e.getAttribute('href')||'').match(/work\/([^/]+)/)?.[1];cardProject=content.projects.find(p=>p.slug===slug);cardParagraph=0;if(cardProject?.hideFromLists||cardProject?.slug==='noveq'){e.remove();cardProject=null;return}if(cardProject){e.setAttribute('data-qa-card','');const url=projectTarget(cardProject);if(url)e.setAttribute('href',url);else{e.removeAttribute('href');e.setAttribute('data-coming-soon','')}if(url.startsWith('https:')){e.setAttribute('target','_blank');e.setAttribute('rel','noopener noreferrer')}e.setAttribute('aria-label',cardProject.title+(cardProject.year?' — '+cardProject.year:''))}}}).on('li a[href*="work/"] p',{element:e=>{if(cardProject)e.setInnerContent(cardParagraph++===0?cardProject.title:(cardProject.year?"'"+cardProject.year.slice(-2):''))}}).on('footer',{element:e=>{if(footerCount++)e.remove();else e.setInnerContent('<p class="framer-text">'+esc(content.site.copyright)+'</p>',{html:true})}});
  const listLabels={'Functional Testing':'Manual & Functional Testing','Testing & Bug Reporting':'Test Execution & Bug Reporting','Bug Reproduction':'Bug Reproduction & Fix Verification'};rewriter=rewriter.on('p[data-cms-text],span[data-cms-text]',{element:e=>{const field=content.pages['/']?.fields?.[e.getAttribute('data-cms-text')];if(field&&listLabels[field.original])e.setInnerContent(listLabels[field.original])}});
  if(!pr)rewriter=rewriter.on('#about',{element:e=>e.setInnerContent(aboutHTML(content),{html:true})}).on('.framer-jvhk2i h2',{element:e=>e.setInnerContent(esc(content.site.intro)+' <span class="framer-text">'+esc(content.site.bio)+'</span>',{html:true})});
  if(pr){rewriter=rewriter.on('[data-kiin-heading]',{element:e=>e.setInnerContent(pr.title)}).on('h1',{element:e=>e.setInnerContent(pr.title)}).on('.framer-r3ajq1',{element:e=>{if(pr.overview||pr.blocks.length)e.remove()}}).on('.framer-2iuck4 p',{element:e=>e.setInnerContent(pr.client)}).on('.framer-fa7hrv p',{element:e=>e.setInnerContent(pr.scope)}).on('.framer-ph5d0i p',{element:e=>e.setInnerContent(pr.duration||pr.role)}).on('.framer-1vod22z p',{element:e=>e.setInnerContent(pr.year)}).on('.framer-1c4tjme',{element:e=>{e.setAttribute('class',(e.getAttribute('class')||'')+' cms-project-body');e.setInnerContent(articleHTML(pr,esc),{html:true})}}).on('.framer-16yx486 img',{element:e=>{if(pr.cover){e.setAttribute('src',pr.cover);e.setAttribute('alt',pr.coverAlt||pr.title);e.removeAttribute('srcset')}}}).on('.framer-1i15xlk > .ssr-variant',{element:e=>e.setAttribute('style','display:none')})}
  let out=rewriter.transform(res);out=new Response(out.body,out);out.headers.set('Cache-Control','no-store');if(preview)out.headers.set('X-Robots-Tag','noindex');return out}
-export default {async fetch(r,env){try{const u=new URL(r.url),p=u.pathname;
+const app = {async fetch(r,env){try{const u=new URL(r.url),p=u.pathname;
  if(p===cvPath){const pdf=await env.CMS?.get('cv-junior-manual-qa','arrayBuffer');return pdf?new Response(pdf,{headers:{'Content-Type':'application/pdf','Content-Disposition':'inline; filename="Nguyen_Trung_Kien_Junior_Manual_QA.pdf"','X-Content-Type-Options':'nosniff'}}):new Response('Not found',{status:404})}
  if(p.startsWith('/cms-media/')){const id=p.split('/').pop();if(!/^[a-f0-9-]+$/.test(id))return new Response('Not found',{status:404});const v=await env.CMS.getWithMetadata('media:'+id,{type:'arrayBuffer'});return v.value?new Response(v.value,{headers:{'Content-Type':v.metadata.type,'Cache-Control':'public,max-age=31536000,immutable','X-Content-Type-Options':'nosniff'}}):new Response('Not found',{status:404})}
  if(!p.startsWith('/api/cms/'))return publicHTML(r,env,u);
@@ -113,3 +168,24 @@ export default {async fetch(r,env){try{const u=new URL(r.url),p=u.pathname;
  if(p==='/api/cms/import'&&r.method==='POST'){const b=await body(r);validate(b.document);const current=await document(env,r,'draft');if(b.revision!==current.revision)return json({error:'Nháp đã thay đổi. Tải lại trước khi nhập.'},409);await snapshot(env,current,'Sao lưu trước nhập dữ liệu');const doc=b.document;doc.revision=current.revision+1;doc.updatedAt=new Date().toISOString();await env.CMS.put('draft',JSON.stringify(doc));await audit(env,'draft.imported');return json(doc)}
  return json({error:'Không tìm thấy endpoint'},404);
  }catch(e){console.error('cms_error',e.message);return json({error:e.message||'Không xử lý được yêu cầu'},400)}}};
+
+// Files that live in the repo for local preview or tooling and must not be served publicly.
+const INTERNAL_PATHS = /^\/(?:README\.txt|preview-mac\.command|preview-server\.ps1|preview-windows\.bat|\.cloudflare-deploy-trigger|_routes\.json|cms-default\.json|cms-model-default\.json|tests\/.*|bots\/.*|content\/.*)$/i;
+const SECURITY_HEADERS = {
+ 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
+ 'X-Content-Type-Options': 'nosniff',
+ 'Referrer-Policy': 'strict-origin-when-cross-origin',
+ 'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), payment=()',
+ 'Content-Security-Policy': "frame-ancestors 'self'",
+ 'X-Frame-Options': 'SAMEORIGIN'
+};
+export default {async fetch(r, env, ctx) {
+ const u = new URL(r.url);
+ if (u.hostname.startsWith('www.')) { u.hostname = u.hostname.slice(4); return Response.redirect(u.href, 301); }
+ const res = INTERNAL_PATHS.test(u.pathname) ? new Response('Not found', {status: 404, headers: {'Content-Type': 'text/plain; charset=utf-8'}}) : await app.fetch(r, env, ctx);
+ const out = new Response(res.body, res);
+ for (const [k, v] of Object.entries(SECURITY_HEADERS)) out.headers.set(k, v);
+ if ((out.headers.get('Content-Type') || '').includes('text/html')) out.headers.delete('Access-Control-Allow-Origin');
+ if (u.pathname.startsWith('/assets/') && out.status === 200 && !out.headers.get('Cache-Control')?.includes('immutable')) out.headers.set('Cache-Control', 'public, max-age=604800');
+ return out;
+}};
